@@ -16,15 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addwords.cpp \
+    database.cpp \
     gamelogic.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    addwords.h \
+    database.h \
     gamelogic.h \
     mainwindow.h
 
 FORMS += \
+    addwords.ui \
     gamewindow.ui \
     mainwindow.ui
 
