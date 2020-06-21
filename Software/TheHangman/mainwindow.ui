@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="gameTitleTextEdit">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -28,11 +28,14 @@
       <family>MS Reference Sans Serif</family>
      </font>
     </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
     <property name="html">
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Reference Sans Serif'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Reference Sans Serif'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:36pt;&quot;&gt;The Hangman&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
@@ -74,7 +77,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Add Words</string>
     </property>
    </widget>
    <widget class="QPushButton" name="scroreBoardButton">
@@ -96,7 +99,7 @@ p, li { white-space: pre-wrap; }
      <string>Score Board</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="gameLogoLabel">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -128,6 +131,12 @@ p, li { white-space: pre-wrap; }
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuThe_Hangman_Main_Menu">
+    <property name="title">
+     <string>The Hangman - Main Menu</string>
+    </property>
+   </widget>
+   <addaction name="menuThe_Hangman_Main_Menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
