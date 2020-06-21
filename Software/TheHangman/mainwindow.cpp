@@ -6,6 +6,13 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // TODO: Declare all objects in the main window
+
+
+    // TODO: Initialise and add functions to all buttons
+
+
 }
 
 MainWindow::~MainWindow()
