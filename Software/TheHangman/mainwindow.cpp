@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     // TODO: Initialise and add functions to all buttons
 
 
+
 }
 
 MainWindow::~MainWindow()
@@ -20,3 +21,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_addWordsButton_clicked()
+{
+    addwordsWindow = new addwords(); //https://stackoverflow.com/questions/17988292/how-to-open-a-new-window-from-the-main-window-in-qt
+    addwordsWindow->showDatabase();
+    addwordsWindow->show();
+}

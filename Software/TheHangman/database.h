@@ -1,22 +1,24 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-#include <QMultiMap>
-#include <QTimer>
-#include <vector>
+#include <QVector>
+#include <QFile>
+#include <QTextStream>
 
 using namespace std; 
 
 class database
 {
 private:
-    QVector<QString> textDatabase;
+    QVector<QString> wordDatabase;
     QVector<QString> hintDatabase;
-    QTimer timer;
     
 public:
     database();
     QString getRandomText();
+    void addWord(QString woxrd);
+    void addHint(QString hint);
+    QVector<QString> getWordDatabase();
 };
 
 #endif // DATABASE_H

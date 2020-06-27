@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <addwords.h>
+#include <QFile>
+#include <database.h>
+#include <QDir>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +19,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_addWordsButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    addwords *addwordsWindow;
 };
 #endif // MAINWINDOW_H
