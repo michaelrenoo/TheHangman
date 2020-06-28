@@ -12,13 +12,16 @@ class database
 private:
     QVector<QString> wordDatabase;
     QVector<QString> hintDatabase;
+
     
 public:
     database();
-    QString getRandomText();
+    void getRandomText();
     void addWord(QString woxrd);
     void addHint(QString hint);
     QVector<QString> getWordDatabase();
+    QString tempWord;
+    QString tempHint;
 };
 
 #endif // DATABASE_H

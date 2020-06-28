@@ -32,4 +32,4 @@ private:
 
 #endif // ADDWORDS_H
 
-//for read and write to file: https://www.youtube.com/watch?v=tY6nW3Wm3NE&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=22
+//read and write to file: https://www.youtube.com/watch?v=tY6nW3Wm3NE&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=22

@@ -20,9 +20,20 @@ GameLogic::GameLogic(QWidget *parent) :
 
 
     // TODO: Save the score in the high score
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()),this,SLOT(timeLimit()));
+    data.getRandomText();
+    timeNumber = 60000 + (data.tempWord.count() * 5000);
+    timer->start(timeNumber);
+
 }
 
 GameLogic::~GameLogic()
 {
     delete ui;
+}
+
+void GameLogic::timeLimit()
+{
+
 }
