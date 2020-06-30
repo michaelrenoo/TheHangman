@@ -4,6 +4,8 @@
 #include <QVector>
 #include <QFile>
 #include <QTextStream>
+#include <QDebug>
+#include <QRandomGenerator>
 
 using namespace std; 
 

@@ -28,3 +28,10 @@ void MainWindow::on_addWordsButton_clicked()
     addwordsWindow->showDatabase();
     addwordsWindow->show();
 }
+
+void MainWindow::on_playGameButton_clicked()
+{
+    game = new gamewindow();
+    game->getData();
+    game->show();
+}

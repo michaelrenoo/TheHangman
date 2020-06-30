@@ -1,5 +1,7 @@
 #include "database.h"
 
+
+
 database::database()
 {
     // TODO: Declare high scores
@@ -21,7 +23,9 @@ database::database()
 
 void database::getRandomText()
 {
-    int randomNumber = rand() % wordDatabase.count()+1; //https://gist.github.com/fffaraz/b48dff1b4d23afe1573e
+    uniform_int_distribution<int> distribution (0, wordDatabase.count()-1);
+    int randomNumber = distribution(*QRandomGenerator::global());
+    qDebug() << randomNumber;
     tempWord = wordDatabase.takeAt(randomNumber);
     tempHint = hintDatabase.takeAt(randomNumber);
 }

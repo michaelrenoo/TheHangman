@@ -18,14 +18,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     addwords.cpp \
     database.cpp \
-    gamelogic.cpp \
+    gamewindow.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     addwords.h \
     database.h \
-    gamelogic.h \
+    gamewindow.h \
     mainwindow.h
 
 FORMS += \
