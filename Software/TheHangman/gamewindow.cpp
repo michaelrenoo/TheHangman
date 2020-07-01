@@ -3,6 +3,11 @@
 #include <QTime>
 using namespace std;
 
+// TODO: Declare all game objects
+const int max_guesses = 7;  // Constant - unchangeable
+int wrong_guesses = 0;  // The number increases as more wrong guesses are made
+string toBeGuessed = "";  // Word to be guessed
+
 gamewindow::gamewindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::gamewindow)
@@ -11,7 +16,7 @@ gamewindow::gamewindow(QWidget *parent) :
     startTimer();
 }
 
-gamewindow::~gamewindow()
+gamewindow::~gamewindow()  // Deconstructor
 {
     delete ui;
 }
@@ -63,14 +68,16 @@ void gamewindow::countDown()
 
 }
 
-//catetanmu di game logic aku pindahin ke sini: Thanks Ris!
-// TODO: Declare all game objects
-const int max_guesses = 7;  // Constant - unchangeable
-int wrong_guesses = 0;  // The number increases as more wrong guesses are made
-string toBeGuessed = ""  // Word to be guessed
-
 // TODO: Initialise all buttons and its functions in the UI
+void gamewindow::on_hintButton_clicked()
+{
+    QMessageBox::information(this, "Hint", data.tempHint);
+}
 
+void gamewindow::on_backButton_clicked()
+{
+    gamewindow::~gamewindow();
+}
 
 // TODO: Code the game logic
 
@@ -80,7 +87,3 @@ string toBeGuessed = ""  // Word to be guessed
 
 // TODO: Save the score in the high score
 
-void gamewindow::on_hintButton_clicked()
-{
-    QMessageBox::information(this, "Hint", data.tempHint);
-}

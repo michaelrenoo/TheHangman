@@ -24,7 +24,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_addWordsButton_clicked()
 {
-    addwordsWindow = new addwords(); //https://stackoverflow.com/questions/17988292/how-to-open-a-new-window-from-the-main-window-in-qt
+    // https://stackoverflow.com/questions/17988292/how-to-open-a-new-window-from-the-main-window-in-qt
+    addwordsWindow = new addwords();
     addwordsWindow->showDatabase();
     addwordsWindow->show();
 }

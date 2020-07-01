@@ -26,6 +26,7 @@ public slots:
 
 private slots:
     void on_hintButton_clicked();
+    void on_backButton_clicked();
 
 private:
     Ui::gamewindow *ui;

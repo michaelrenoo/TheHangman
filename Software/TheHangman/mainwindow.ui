@@ -23,9 +23,9 @@
    <widget class="QTextEdit" name="gameTitleTextEdit">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>80</y>
-      <width>461</width>
+      <x>340</x>
+      <y>90</y>
+      <width>431</width>
       <height>91</height>
      </rect>
     </property>
@@ -51,8 +51,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="playGameButton">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>230</y>
+      <x>460</x>
+      <y>250</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -73,8 +73,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="addWordsButton">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>310</y>
+      <x>460</x>
+      <y>330</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -92,8 +92,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="scroreBoardButton">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>390</y>
+      <x>460</x>
+      <y>410</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -111,10 +111,10 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="gameLogoLabel">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>200</y>
-      <width>211</width>
-      <height>311</height>
+      <x>30</x>
+      <y>90</y>
+      <width>281</width>
+      <height>431</height>
      </rect>
     </property>
     <property name="autoFillBackground">
