@@ -65,8 +65,9 @@ void gamewindow::countDown()
 
 //catetanmu di game logic aku pindahin ke sini: Thanks Ris!
 // TODO: Declare all game objects
-const int max_guesses = 6;  // Constant - unchangeable
+const int max_guesses = 7;  // Constant - unchangeable
 int wrong_guesses = 0;  // The number increases as more wrong guesses are made
+string toBeGuessed = ""  // Word to be guessed
 
 // TODO: Initialise all buttons and its functions in the UI
 
