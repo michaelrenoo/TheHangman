@@ -1,6 +1,7 @@
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
 #include <QTime>
+using namespace std;
 
 gamewindow::gamewindow(QWidget *parent) :
     QDialog(parent),
@@ -62,9 +63,10 @@ void gamewindow::countDown()
 
 }
 
-//catetanmu di game logic aku pindahin ke sini:
+//catetanmu di game logic aku pindahin ke sini: Thanks Ris!
 // TODO: Declare all game objects
-
+const int max_guesses = 6;  // Constant - unchangeable
+int wrong_guesses = 0;  // The number increases as more wrong guesses are made
 
 // TODO: Initialise all buttons and its functions in the UI
 
