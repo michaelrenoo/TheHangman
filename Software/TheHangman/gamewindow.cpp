@@ -7,12 +7,15 @@ using namespace std;
 const int max_guesses = 7;  // Constant - unchangeable
 int wrong_guesses = 0;  // The number increases as more wrong guesses are made
 string toBeGuessed = "";  // Word to be guessed
+int score = 0;  // The score acquired
 
 gamewindow::gamewindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::gamewindow)
 {
     ui->setupUi(this);
+    ui->chanceValueLabel->setNum(max_guesses);
+    ui->scoreValueLabel->setNum(score);
     startTimer();
 }
 

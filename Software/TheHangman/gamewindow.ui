@@ -75,7 +75,7 @@
     <string>Chances:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="chanceLimitLabel">
+  <widget class="QLabel" name="chanceValueLabel">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -90,7 +90,7 @@
     </font>
    </property>
    <property name="text">
-    <string>7</string>
+    <string>X</string>
    </property>
   </widget>
   <widget class="QLabel" name="scoreLabel">
@@ -128,7 +128,7 @@
     </font>
    </property>
    <property name="text">
-    <string>10</string>
+    <string>X</string>
    </property>
   </widget>
   <widget class="QPushButton" name="backButton">
