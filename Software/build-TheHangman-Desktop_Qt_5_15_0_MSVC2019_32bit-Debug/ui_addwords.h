@@ -32,10 +32,10 @@ public:
     {
         if (addwords->objectName().isEmpty())
             addwords->setObjectName(QString::fromUtf8("addwords"));
-        addwords->resize(699, 490);
+        addwords->resize(800, 600);
         buttonBox = new QDialogButtonBox(addwords);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(320, 440, 341, 32));
+        buttonBox->setGeometry(QRect(400, 490, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         label = new QLabel(addwords);
@@ -46,17 +46,17 @@ public:
         label->setFont(font);
         label_2 = new QLabel(addwords);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(440, 20, 111, 41));
+        label_2->setGeometry(QRect(460, 20, 111, 41));
         label_2->setFont(font);
         addWordText = new QPlainTextEdit(addwords);
         addWordText->setObjectName(QString::fromUtf8("addWordText"));
-        addWordText->setGeometry(QRect(20, 70, 281, 351));
+        addWordText->setGeometry(QRect(80, 70, 281, 351));
         addHintText = new QPlainTextEdit(addwords);
         addHintText->setObjectName(QString::fromUtf8("addHintText"));
-        addHintText->setGeometry(QRect(380, 70, 301, 351));
+        addHintText->setGeometry(QRect(460, 70, 301, 351));
         label_3 = new QLabel(addwords);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(30, 450, 371, 16));
+        label_3->setGeometry(QRect(80, 500, 371, 16));
         QFont font1;
         font1.setPointSize(10);
         label_3->setFont(font1);

@@ -35,13 +35,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 623);
+        MainWindow->resize(800, 600);
         MainWindow->setMaximumSize(QSize(800, 16777215));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gameTitleTextEdit = new QTextEdit(centralwidget);
         gameTitleTextEdit->setObjectName(QString::fromUtf8("gameTitleTextEdit"));
-        gameTitleTextEdit->setGeometry(QRect(230, 80, 461, 91));
+        gameTitleTextEdit->setGeometry(QRect(340, 90, 431, 91));
         QFont font;
         font.setFamily(QString::fromUtf8("MS Reference Sans Serif"));
         gameTitleTextEdit->setFont(font);
@@ -49,7 +49,7 @@ public:
         gameTitleTextEdit->setReadOnly(true);
         playGameButton = new QPushButton(centralwidget);
         playGameButton->setObjectName(QString::fromUtf8("playGameButton"));
-        playGameButton->setGeometry(QRect(360, 230, 181, 51));
+        playGameButton->setGeometry(QRect(460, 250, 181, 51));
         QFont font1;
         font1.setFamily(QString::fromUtf8("MS Reference Sans Serif"));
         font1.setPointSize(16);
@@ -57,15 +57,15 @@ public:
         playGameButton->setAutoFillBackground(false);
         addWordsButton = new QPushButton(centralwidget);
         addWordsButton->setObjectName(QString::fromUtf8("addWordsButton"));
-        addWordsButton->setGeometry(QRect(360, 310, 181, 51));
+        addWordsButton->setGeometry(QRect(460, 330, 181, 51));
         addWordsButton->setFont(font1);
         scroreBoardButton = new QPushButton(centralwidget);
         scroreBoardButton->setObjectName(QString::fromUtf8("scroreBoardButton"));
-        scroreBoardButton->setGeometry(QRect(360, 390, 181, 51));
+        scroreBoardButton->setGeometry(QRect(460, 410, 181, 51));
         scroreBoardButton->setFont(font1);
         gameLogoLabel = new QLabel(centralwidget);
         gameLogoLabel->setObjectName(QString::fromUtf8("gameLogoLabel"));
-        gameLogoLabel->setGeometry(QRect(50, 200, 211, 311));
+        gameLogoLabel->setGeometry(QRect(30, 90, 281, 431));
         gameLogoLabel->setAutoFillBackground(true);
         gameLogoLabel->setPixmap(QPixmap(QString::fromUtf8("../../Abbildungen/mainMenuImage.png")));
         gameLogoLabel->setScaledContents(true);
