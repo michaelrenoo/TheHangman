@@ -8,6 +8,7 @@ const int max_guesses = 7;  // Constant - unchangeable
 int wrong_guesses = 0;  // The number increases as more wrong guesses are made
 string toBeGuessed = "";  // Word to be guessed
 int score = 0;  // The score acquired
+int consecutive = 0;  // The amount of time user guessed correctly after one another
 
 gamewindow::gamewindow(QWidget *parent) :
     QDialog(parent),
@@ -16,6 +17,7 @@ gamewindow::gamewindow(QWidget *parent) :
     ui->setupUi(this);
     ui->chanceValueLabel->setNum(max_guesses);
     ui->scoreValueLabel->setNum(score);
+    update_game_word(data.tempWord);
     startTimer();
 }
 
@@ -83,7 +85,10 @@ void gamewindow::on_backButton_clicked()
 }
 
 // TODO: Code the game logic
-
+void gamewindow::update_game_word(QString text)
+{
+    ui->puzzleWordLabel->setText(text);
+}
 
 // TODO: Code how the score is achieved
 
