@@ -24,7 +24,8 @@ public:
 public slots:
     void countDown();
 
-private slots:
+private slots:  // Executed when signal is submitted
+    void letterPressed();
     void on_hintButton_clicked();
     void on_backButton_clicked();
     void update_game_word(QString);

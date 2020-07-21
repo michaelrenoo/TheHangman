@@ -4,12 +4,14 @@
 #include <string>
 using namespace std;
 
-// TODO: Declare all game objects
+// Declare all game objects
 int max_guesses = 7;  // TODO: should this be constant - unchangeable?
 int wrong_guesses = 0;  // The number increases as more wrong guesses are made
-QString toBeGuessed = "";  // Word to be guessed
+QString toBeGuessed;  // Word to be guessed
+QString guessedWord;  // Word shown on the UI (the one with asterisks)
 int score = 0;  // The score acquired
 int consecutive = 0;  // The amount of time user guessed correctly after one another
+QString alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  // String to contain all letters in the alphabet
 
 
 // What to do everytime the game is started
@@ -18,9 +20,23 @@ gamewindow::gamewindow(QWidget *parent) :
     ui(new Ui::gamewindow)
 {
     ui->setupUi(this);
+
+    // Connect specific widgets to the functions
+    QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
+    for (int i = 0; i < alphabet.size(); ++i) {
+        QCharRef c = alphabet[i];
+        QString butName = "Button" + c;
+                letterButtons[i] = gamewindow::findChild<QPushButton *>(butName);  // search for specific Widget by calling the name
+                connect(letterButtons[i], SIGNAL(released()), this, SLOT(letterPressed()));
+    }
+    connect(ui->backButton, SIGNAL(released()), this, SLOT(on_backButton_clicked()));
+    connect(ui->hintButton, SIGNAL(released()), this, SLOT(on_hintButton_clicked()));
+
+    toBeGuessed = data.tempWord;
+    guessedWord = change_game_word(toBeGuessed);
     ui->chanceValueLabel->setNum(max_guesses);
     ui->scoreValueLabel->setNum(score);
-    ui->puzzleWordLabel->setText(change_game_word("MASK"));  // Change to actual puzzle word
+    ui->puzzleWordLabel->setText(guessedWord);  // Change to actual puzzle word
     //update_game_word(data.tempWord);
     startTimer();
 }
@@ -80,6 +96,13 @@ void gamewindow::countDown()
 }
 
 // TODO: Initialise all buttons and its functions in the UI
+void gamewindow::letterPressed()
+{
+    QPushButton *button = (QPushButton *)sender();
+    QString butValue = button->text();
+    //check_word(butValue, toBeGuessed, guessedWord);
+}
+
 void gamewindow::on_hintButton_clicked()
 {
     QMessageBox::information(this, "Hint", data.tempHint);
@@ -116,6 +139,7 @@ void gamewindow::check_word(char input, QString toGuess, QString guessed)
             guessed[i] = input;
             consecutive++;  // Increase the amount of consecutive guesses to gain higher score
             match++;  // To signal that the input is correct
+            // TODO: Add score thingy
         }
         else {
             consecutive = 0;  // Bring back the amount of consecutive guesses to zero
