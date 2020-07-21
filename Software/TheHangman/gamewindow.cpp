@@ -1,6 +1,7 @@
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
 #include <QTime>
+#include <string>
 using namespace std;
 
 // TODO: Declare all game objects
@@ -10,6 +11,8 @@ string toBeGuessed = "";  // Word to be guessed
 int score = 0;  // The score acquired
 int consecutive = 0;  // The amount of time user guessed correctly after one another
 
+
+// What to do everytime the game is started
 gamewindow::gamewindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::gamewindow)
@@ -17,7 +20,8 @@ gamewindow::gamewindow(QWidget *parent) :
     ui->setupUi(this);
     ui->chanceValueLabel->setNum(max_guesses);
     ui->scoreValueLabel->setNum(score);
-    update_game_word(data.tempWord);
+    ui->puzzleWordLabel->setText(change_game_word("BLA"));  // Change to actual puzzle word
+    //update_game_word(data.tempWord);
     startTimer();
 }
 
@@ -33,13 +37,15 @@ void gamewindow::startTimer()
     timer->start(1000);
 }
 
+
+// get data from two .txt files as the database
 void gamewindow::getData()
 {
-    QString wordsDatabasePath = qApp->applicationDirPath(); //location of the file , assuming in application dir
+    QString wordsDatabasePath = qApp->applicationDirPath(); // location of the file , assuming in application dir
     wordsDatabasePath.append("/WordsDatabase(TheHangman).txt");
     QFile wordsDatbaseFile(wordsDatabasePath);
     if (!wordsDatbaseFile.open(QFile::ReadOnly | QFile::Text)){
-        QMessageBox::warning(this, "title", "file is not opened");
+        QMessageBox::warning(this, "Database File", "file is not opened");
     }
     QTextStream inWord(&wordsDatbaseFile);
     QString word = inWord.readAll();
@@ -50,7 +56,7 @@ void gamewindow::getData()
     hintsDatabasePath.append("/HintsDatabase(TheHangman).txt");
     QFile hintsDatabaseFile (hintsDatabasePath);
     if (!hintsDatabaseFile.open(QFile::ReadOnly | QFile::Text)){
-        QMessageBox::warning(this, "title", "file is not opened");
+        QMessageBox::warning(this, "Database File", "file is not opened");
     }
     QTextStream inHint (&hintsDatabaseFile);
     QString hint = inHint.readAll();
@@ -84,11 +90,17 @@ void gamewindow::on_backButton_clicked()
     gamewindow::~gamewindow();
 }
 
-// TODO: Code the game logic
 void gamewindow::update_game_word(QString text)
 {
     ui->puzzleWordLabel->setText(text);
 }
+
+// TODO: Code the game logic
+QString gamewindow::change_game_word(QString text)
+{
+    return QString(text.length(), '*');  // Change the characters in the QString to *
+}
+
 
 // TODO: Code how the score is achieved
 

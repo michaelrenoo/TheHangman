@@ -28,6 +28,7 @@ private slots:
     void on_hintButton_clicked();
     void on_backButton_clicked();
     void update_game_word(QString);
+    QString change_game_word(QString);
 
 private:
     Ui::gamewindow *ui;
