@@ -33,6 +33,6 @@ void MainWindow::on_addWordsButton_clicked()
 void MainWindow::on_playGameButton_clicked()
 {
     game = new gamewindow();
-    game->getData();
+    // game->getData();
     game->show();
 }

@@ -20,6 +20,7 @@ gamewindow::gamewindow(QWidget *parent) :
     ui(new Ui::gamewindow)
 {
     ui->setupUi(this);
+    this->getData();
 
     // Connect specific widgets to the functions
     QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
