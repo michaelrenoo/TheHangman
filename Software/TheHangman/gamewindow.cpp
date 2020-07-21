@@ -5,9 +5,9 @@
 using namespace std;
 
 // TODO: Declare all game objects
-const int max_guesses = 7;  // Constant - unchangeable
+int max_guesses = 7;  // TODO: should this be constant - unchangeable?
 int wrong_guesses = 0;  // The number increases as more wrong guesses are made
-string toBeGuessed = "";  // Word to be guessed
+QString toBeGuessed = "";  // Word to be guessed
 int score = 0;  // The score acquired
 int consecutive = 0;  // The amount of time user guessed correctly after one another
 
@@ -20,7 +20,7 @@ gamewindow::gamewindow(QWidget *parent) :
     ui->setupUi(this);
     ui->chanceValueLabel->setNum(max_guesses);
     ui->scoreValueLabel->setNum(score);
-    ui->puzzleWordLabel->setText(change_game_word("BLA"));  // Change to actual puzzle word
+    ui->puzzleWordLabel->setText(change_game_word("MASK"));  // Change to actual puzzle word
     //update_game_word(data.tempWord);
     startTimer();
 }
@@ -101,6 +101,29 @@ QString gamewindow::change_game_word(QString text)
     return QString(text.length(), '*');  // Change the characters in the QString to *
 }
 
+
+// input = character from user, toGuess = puzzle word to be guessed, guessed = game word as seen on the label
+void gamewindow::check_word(char input, QString toGuess, QString guessed)
+{  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
+    int match = 0;
+    for (int i = 0; i < toGuess.length(); i++) {
+        // Check with the guessed word whether the letter is already matched
+        if (input == guessed[i])
+            QMessageBox::information(this, "Used letter", "The letter you gave has been entered before.");
+        // Is the input correct?
+        else if (input == toGuess[i])
+        {
+            guessed[i] = input;
+            consecutive++;  // Increase the amount of consecutive guesses to gain higher score
+            match++;  // To signal that the input is correct
+        }
+        else {
+            consecutive = 0;  // Bring back the amount of consecutive guesses to zero
+            wrong_guesses++;
+            max_guesses--;
+        }
+    }
+}
 
 // TODO: Code how the score is achieved
 
