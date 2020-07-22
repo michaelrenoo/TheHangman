@@ -12,31 +12,7 @@ gamewindow::gamewindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->getData();  // To fill database with data from .txt data
-
-    // Initialise all game objects
-    wrong_guesses = 0;
-    toBeGuessed = data.tempWord;
-    guessedWord = change_game_word(toBeGuessed);
-    consecutive = 0;
-    data.tempScore = 0;
-
-    // Connect specific widgets to the functions
-    QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
-    for (int i = 0; i < alphabet.size(); ++i) {
-        QCharRef c = alphabet[i];
-        QString butName = "Button" + c;
-                letterButtons[i] = gamewindow::findChild<QPushButton *>(butName);  // search for specific Widget by calling the name
-                connect(letterButtons[i], SIGNAL(released()), this, SLOT(letter_pressed()));
-    }
-    //connect(ui->backButton, SIGNAL(released()), this, SLOT(on_backButton_clicked()));
-    //connect(ui->hintButton, SIGNAL(released()), this, SLOT(on_hintButton_clicked()));
-
-    score = data.tempScore;
-    ui->chanceValueLabel->setNum(max_guesses);
-    ui->scoreValueLabel->setNum(score);
-    ui->puzzleWordLabel->setText(guessedWord);  // Change to actual puzzle word
-    //update_game_word(data.tempWord);
-    startTimer();
+    game_start();
 }
 
 gamewindow::~gamewindow()  // Deconstructor
@@ -198,6 +174,37 @@ void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackov
     }
 }
 
+
+// Function to restart all widgets in the UI
+void gamewindow::game_start()
+{
+    // Initialise all game objects
+    wrong_guesses = 0;
+    toBeGuessed = data.tempWord;
+    guessedWord = change_game_word(toBeGuessed);
+    consecutive = 0;
+    data.tempScore = 0;
+
+    // Connect specific widgets to the functions
+    QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
+    for (int i = 0; i < alphabet.size(); ++i) {
+        QCharRef c = alphabet[i];
+        QString butName = "Button" + c;
+                letterButtons[i] = gamewindow::findChild<QPushButton *>(butName);  // search for specific Widget by calling the name
+                connect(letterButtons[i], SIGNAL(released()), this, SLOT(letter_pressed()));
+    }
+    //connect(ui->backButton, SIGNAL(released()), this, SLOT(on_backButton_clicked()));
+    //connect(ui->hintButton, SIGNAL(released()), this, SLOT(on_hintButton_clicked()));
+
+    score = data.tempScore;
+    ui->chanceValueLabel->setNum(max_guesses);  // Change to max guesses
+    ui->scoreValueLabel->setNum(score);         // Change to the score
+    ui->puzzleWordLabel->setText(guessedWord);  // Change to actual puzzle word
+    //update_game_word(data.tempWord);
+    startTimer();
+}
+
+
 void gamewindow::game_over(int guesses)
 {
     QMessageBox::StandardButton box;
@@ -226,21 +233,22 @@ void gamewindow::new_game()
     ui->setupUi(this);  // Reinitialise UI
     this->getData();
 
-    for (uint i = 0; i < words_before.size(); i++) {
-        if (words_before.size() < 7){
-            while (toBeGuessed == words_before[i])  // DO NOT USE WHILE!
-            {
+    // Check whether there are still words left to be played
+    if (words_before.size() != 7) {
+        for (uint i = 0; i < words_before.size(); i++) {
+            if (data.tempWord == words_before[i]) {
                 this->getData();
+                game_start();
             }
-        }
-        else
-        {
-            QMessageBox::information(this, "All words played",
-                                     "Congratulations! You have guessed all the words in the database.\n"
-                                     "You can add more words through the \"Add Words\" menu on the main page.");
-            // Save scores
-            // Close UI
-            QWidget::close();
+            else
+            {
+                QMessageBox::information(this, "All words played",
+                                         "Congratulations! You have guessed all the words in the database.\n"
+                                         "You can add more words through the \"Add Words\" menu on the main page.");
+                // Save scores
+                // Close UI
+                QWidget::close();
+            }
         }
     }
 }

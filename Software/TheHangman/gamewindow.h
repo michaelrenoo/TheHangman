@@ -32,6 +32,7 @@ private slots:  // Executed when signal is submitted
     QString change_game_word(QString);
     int check_word(char, QString);
     void is_finished(QString);
+    void game_start();
     void game_over(int);
     void new_game();
 
