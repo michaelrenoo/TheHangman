@@ -5,7 +5,7 @@
 using namespace std;
 
 // Declare all game objects
-int max_guesses = 7;  // TODO: should this be constant - unchangeable?
+int const max_guesses = 7;
 int wrong_guesses = 0;  // The number increases as more wrong guesses are made
 QString toBeGuessed;  // Word to be guessed
 QString guessedWord;  // Word shown on the UI (the one with asterisks)
@@ -20,7 +20,7 @@ gamewindow::gamewindow(QWidget *parent) :
     ui(new Ui::gamewindow)
 {
     ui->setupUi(this);
-    this->getData();
+    this->getData();  // To fill database with data from .txt data
 
     // Connect specific widgets to the functions
     QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
@@ -85,6 +85,8 @@ void gamewindow::getData()
     timeNumber = 30 + data.tempWord.count()*10;
 }
 
+
+// Timer count down
 void gamewindow::countDown()
 {
 
@@ -99,7 +101,7 @@ void gamewindow::countDown()
     }
 }
 
-// TODO: Initialise all buttons and its functions in the UI
+// Initialise all buttons and its functions in the UI
 void gamewindow::letterPressed()
 {
     QPushButton *button = (QPushButton *)sender();
@@ -119,15 +121,28 @@ void gamewindow::on_backButton_clicked()
     gamewindow::~gamewindow();
 }
 
+// TODO: do we need this?
 void gamewindow::update_game_word(QString text)
 {
     ui->puzzleWordLabel->setText(text);
 }
 
-// TODO: Code the game logic
+
+// Game logic
+// Change the characters in the QString to *
 QString gamewindow::change_game_word(QString text)
 {
-    return QString(text.length(), '*');  // Change the characters in the QString to *
+    QString result = "";
+    for (int i = 0; i < text.length(); i++) {
+        if (text[i] == " ") {
+            result.append(" ");
+        }
+        else {
+            result.append("*");
+        }
+    }
+    return result;
+    //return QString(text.length(), '*');
 }
 
 
@@ -135,6 +150,7 @@ QString gamewindow::change_game_word(QString text)
 void gamewindow::check_word(char input, QString toGuess, QString guessed)
 {  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
     int match = 0;
+    int max_limit = max_guesses;
     for (int i = 0; i < toGuess.length(); i++) {
         // Check with the guessed word whether the letter is already matched
         if (input == guessed[i])
@@ -153,7 +169,8 @@ void gamewindow::check_word(char input, QString toGuess, QString guessed)
         else {
             consecutive = 0;  // Bring back the amount of consecutive guesses to zero
             wrong_guesses++;
-            max_guesses--;
+            max_limit -= 1;
+            ui->chanceValueLabel->setNum(max_limit);  // Readjust chance limit
         }
     }
 }
