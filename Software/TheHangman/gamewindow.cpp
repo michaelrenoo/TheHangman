@@ -101,7 +101,9 @@ void gamewindow::letterPressed()
 {
     QPushButton *button = (QPushButton *)sender();
     QString butValue = button->text();
-    //check_word(butValue, toBeGuessed, guessedWord);
+    string input = butValue.toStdString();
+    //ui->puzzleWordLabel->setText(butValue);
+    check_word(input[0], toBeGuessed, guessedWord);
 }
 
 void gamewindow::on_hintButton_clicked()
@@ -138,8 +140,10 @@ void gamewindow::check_word(char input, QString toGuess, QString guessed)
         else if (input == toGuess[i])
         {
             guessed[i] = input;
+            guessedWord = guessed;
             consecutive++;  // Increase the amount of consecutive guesses to gain higher score
             match++;  // To signal that the input is correct
+            ui->puzzleWordLabel->setText(guessedWord);  // Update label
             // TODO: Add score thingy
         }
         else {

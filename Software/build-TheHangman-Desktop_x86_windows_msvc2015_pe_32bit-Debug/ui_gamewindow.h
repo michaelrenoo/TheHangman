@@ -159,7 +159,8 @@ public:
         ButtonA = new QPushButton(gamewindow);
         ButtonA->setObjectName(QString::fromUtf8("ButtonA"));
         ButtonA->setGeometry(QRect(370, 230, 42, 42));
-        ButtonA->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonA->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -168,11 +169,24 @@ public:
 " max-height:40px;\n"
 " min-width:40px;\n"
 " min-height:40px;\n"
-"/* Idea and source: https://stackoverflow.com/questions/12734319/change-rectangular-qt-button-to-round */"));
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonB = new QPushButton(gamewindow);
         ButtonB->setObjectName(QString::fromUtf8("ButtonB"));
         ButtonB->setGeometry(QRect(430, 230, 42, 42));
-        ButtonB->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonB->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -180,11 +194,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonC = new QPushButton(gamewindow);
         ButtonC->setObjectName(QString::fromUtf8("ButtonC"));
         ButtonC->setGeometry(QRect(490, 230, 42, 42));
-        ButtonC->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonC->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -192,11 +220,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonD = new QPushButton(gamewindow);
         ButtonD->setObjectName(QString::fromUtf8("ButtonD"));
         ButtonD->setGeometry(QRect(550, 230, 42, 42));
-        ButtonD->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonD->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -204,11 +246,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonE = new QPushButton(gamewindow);
         ButtonE->setObjectName(QString::fromUtf8("ButtonE"));
         ButtonE->setGeometry(QRect(610, 230, 42, 42));
-        ButtonE->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonE->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -216,11 +272,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonF = new QPushButton(gamewindow);
         ButtonF->setObjectName(QString::fromUtf8("ButtonF"));
         ButtonF->setGeometry(QRect(670, 230, 42, 42));
-        ButtonF->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonF->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -228,11 +298,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonG = new QPushButton(gamewindow);
         ButtonG->setObjectName(QString::fromUtf8("ButtonG"));
         ButtonG->setGeometry(QRect(410, 290, 42, 42));
-        ButtonG->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonG->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -240,11 +324,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonH = new QPushButton(gamewindow);
         ButtonH->setObjectName(QString::fromUtf8("ButtonH"));
         ButtonH->setGeometry(QRect(470, 290, 42, 42));
-        ButtonH->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonH->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -252,11 +350,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonJ = new QPushButton(gamewindow);
         ButtonJ->setObjectName(QString::fromUtf8("ButtonJ"));
         ButtonJ->setGeometry(QRect(590, 290, 42, 42));
-        ButtonJ->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonJ->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -264,11 +376,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonK = new QPushButton(gamewindow);
         ButtonK->setObjectName(QString::fromUtf8("ButtonK"));
         ButtonK->setGeometry(QRect(650, 290, 42, 42));
-        ButtonK->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonK->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -276,11 +402,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonL = new QPushButton(gamewindow);
         ButtonL->setObjectName(QString::fromUtf8("ButtonL"));
         ButtonL->setGeometry(QRect(380, 350, 42, 42));
-        ButtonL->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonL->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -288,11 +428,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonI = new QPushButton(gamewindow);
         ButtonI->setObjectName(QString::fromUtf8("ButtonI"));
         ButtonI->setGeometry(QRect(530, 290, 42, 42));
-        ButtonI->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonI->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -300,11 +454,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonM = new QPushButton(gamewindow);
         ButtonM->setObjectName(QString::fromUtf8("ButtonM"));
         ButtonM->setGeometry(QRect(440, 350, 42, 42));
-        ButtonM->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonM->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -312,11 +480,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonN = new QPushButton(gamewindow);
         ButtonN->setObjectName(QString::fromUtf8("ButtonN"));
         ButtonN->setGeometry(QRect(500, 350, 42, 42));
-        ButtonN->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonN->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -324,11 +506,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonP = new QPushButton(gamewindow);
         ButtonP->setObjectName(QString::fromUtf8("ButtonP"));
         ButtonP->setGeometry(QRect(620, 350, 42, 42));
-        ButtonP->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonP->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -336,11 +532,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonQ = new QPushButton(gamewindow);
         ButtonQ->setObjectName(QString::fromUtf8("ButtonQ"));
         ButtonQ->setGeometry(QRect(410, 410, 42, 42));
-        ButtonQ->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonQ->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -348,11 +558,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonR = new QPushButton(gamewindow);
         ButtonR->setObjectName(QString::fromUtf8("ButtonR"));
         ButtonR->setGeometry(QRect(470, 410, 42, 42));
-        ButtonR->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonR->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -360,11 +584,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonO = new QPushButton(gamewindow);
         ButtonO->setObjectName(QString::fromUtf8("ButtonO"));
         ButtonO->setGeometry(QRect(560, 350, 42, 42));
-        ButtonO->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonO->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -372,11 +610,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonU = new QPushButton(gamewindow);
         ButtonU->setObjectName(QString::fromUtf8("ButtonU"));
         ButtonU->setGeometry(QRect(650, 410, 42, 42));
-        ButtonU->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonU->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -384,11 +636,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonT = new QPushButton(gamewindow);
         ButtonT->setObjectName(QString::fromUtf8("ButtonT"));
         ButtonT->setGeometry(QRect(590, 410, 42, 42));
-        ButtonT->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonT->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -396,11 +662,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonS = new QPushButton(gamewindow);
         ButtonS->setObjectName(QString::fromUtf8("ButtonS"));
         ButtonS->setGeometry(QRect(530, 410, 42, 42));
-        ButtonS->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonS->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -408,11 +688,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonY = new QPushButton(gamewindow);
         ButtonY->setObjectName(QString::fromUtf8("ButtonY"));
         ButtonY->setGeometry(QRect(560, 470, 42, 42));
-        ButtonY->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonY->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -420,11 +714,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonW = new QPushButton(gamewindow);
         ButtonW->setObjectName(QString::fromUtf8("ButtonW"));
         ButtonW->setGeometry(QRect(440, 470, 42, 42));
-        ButtonW->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonW->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -432,11 +740,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonZ = new QPushButton(gamewindow);
         ButtonZ->setObjectName(QString::fromUtf8("ButtonZ"));
         ButtonZ->setGeometry(QRect(620, 470, 42, 42));
-        ButtonZ->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonZ->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -444,11 +766,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonX = new QPushButton(gamewindow);
         ButtonX->setObjectName(QString::fromUtf8("ButtonX"));
         ButtonX->setGeometry(QRect(500, 470, 42, 42));
-        ButtonX->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonX->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -456,11 +792,25 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
         ButtonV = new QPushButton(gamewindow);
         ButtonV->setObjectName(QString::fromUtf8("ButtonV"));
         ButtonV->setGeometry(QRect(380, 470, 42, 42));
-        ButtonV->setStyleSheet(QString::fromUtf8("background-color: white;\n"
+        ButtonV->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: white;\n"
 " border-style: solid;\n"
 " border-width:1px;\n"
 " border-radius:20px;\n"
@@ -468,7 +818,20 @@ public:
 " max-width:40px;\n"
 " max-height:40px;\n"
 " min-width:40px;\n"
-" min-height:40px;"));
+" min-height:40px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: blue;\n"
+" border-style: solid;\n"
+" border-width:1px;\n"
+" border-radius:20px;\n"
+" border-color: red;\n"
+" max-width:40px;\n"
+" max-height:40px;\n"
+" min-width:40px;\n"
+" min-height:40px;\n"
+"}"));
 
         retranslateUi(gamewindow);
 
