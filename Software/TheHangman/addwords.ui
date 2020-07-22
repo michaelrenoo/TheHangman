@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add Words</string>
+   <string>The Hangman - Add Words</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">

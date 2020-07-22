@@ -70,7 +70,7 @@ public:
 
     void retranslateUi(QDialog *addwords)
     {
-        addwords->setWindowTitle(QCoreApplication::translate("addwords", "Add Words", nullptr));
+        addwords->setWindowTitle(QCoreApplication::translate("addwords", "The Hangman - Add Words", nullptr));
         label->setText(QCoreApplication::translate("addwords", "Word:", nullptr));
         label_2->setText(QCoreApplication::translate("addwords", "Hint:", nullptr));
         addWordText->setPlainText(QString());

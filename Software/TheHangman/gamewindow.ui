@@ -149,7 +149,7 @@
     <string>&lt;- Give Up</string>
    </property>
   </widget>
-  <widget class="QLabel" name="baseHMLabel">
+  <widget class="QLabel" name="HMLabel1">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -165,7 +165,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="firstHMLabel">
+  <widget class="QLabel" name="HMLabel2">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -184,7 +184,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="secondHMLabel">
+  <widget class="QLabel" name="HMLabel3">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -200,7 +200,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="thirdHMLabel">
+  <widget class="QLabel" name="HMLabel4">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -216,7 +216,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="fourthHMLabel">
+  <widget class="QLabel" name="HMLabel5">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -237,7 +237,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="fifthHMLabel">
+  <widget class="QLabel" name="HMLabel7">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -253,7 +253,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="sixthHMLabel">
+  <widget class="QLabel" name="HMLabel6">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -269,7 +269,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="seventhHMLabel">
+  <widget class="QLabel" name="HMLabel8">
    <property name="geometry">
     <rect>
      <x>150</x>

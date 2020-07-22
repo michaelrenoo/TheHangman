@@ -84,6 +84,24 @@ void gamewindow::letter_pressed()
         consecutive = 0;  // Bring back the amount of consecutive guesses to zero
         wrong_guesses++;
         ui->chanceValueLabel->setNum(max_guesses - wrong_guesses);  // Readjust chance limit
+        switch (wrong_guesses) {
+        case 1: ui->HMLabel1->show();
+            break;
+        case 2: ui->HMLabel2->show();
+            break;
+        case 3: ui->HMLabel3->show();
+            break;
+        case 4: ui->HMLabel4->show();
+            break;
+        case 5: ui->HMLabel5->show();
+            break;
+        case 6: ui->HMLabel6->show();
+            ui->HMLabel7->show();
+            break;
+        case 7: ui->HMLabel8->show();
+            break;
+        default: break;
+        }
         game_over(wrong_guesses);  // Check whether there is any chance left
     }
 }
@@ -200,6 +218,17 @@ void gamewindow::game_start()
     ui->chanceValueLabel->setNum(max_guesses);  // Change to max guesses
     ui->scoreValueLabel->setNum(score);         // Change to the score
     ui->puzzleWordLabel->setText(guessedWord);  // Change to actual puzzle word
+
+    // Hide all hangman figure
+    ui->HMLabel1->hide();
+    ui->HMLabel2->hide();
+    ui->HMLabel3->hide();
+    ui->HMLabel4->hide();
+    ui->HMLabel5->hide();
+    ui->HMLabel6->hide();
+    ui->HMLabel7->hide();
+    ui->HMLabel8->hide();
+
     //update_game_word(data.tempWord);
     startTimer();
 }
@@ -233,23 +262,24 @@ void gamewindow::new_game()
     ui->setupUi(this);  // Reinitialise UI
     this->getData();
 
+    // TODO: How to restart game
     // Check whether there are still words left to be played
-    if (words_before.size() != 7) {
+    if (words_before.size() != data.databaseSize) {
         for (uint i = 0; i < words_before.size(); i++) {
             if (data.tempWord == words_before[i]) {
-                this->getData();
-                game_start();
-            }
-            else
-            {
-                QMessageBox::information(this, "All words played",
-                                         "Congratulations! You have guessed all the words in the database.\n"
-                                         "You can add more words through the \"Add Words\" menu on the main page.");
-                // Save scores
-                // Close UI
-                QWidget::close();
+                gamewindow *game = new gamewindow();
+                game->show();
             }
         }
+    }
+    else
+    {
+        QMessageBox::information(this, "All words played",
+                                 "Congratulations! You have guessed all the words in the database.\n"
+                                 "You can add more words through the \"Add Words\" menu on the main page.");
+        // Save scores
+        // Close UI
+        QWidget::close();
     }
 }
 

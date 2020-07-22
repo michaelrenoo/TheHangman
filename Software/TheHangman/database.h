@@ -29,6 +29,7 @@ public:
     QString tempWord;  // Puzzle word
     QString tempHint;  // Hint for puzzle word
     int tempScore;  // Score obtained
+    uint databaseSize = (wordDatabase.count() - 1);
 };
 
 #endif // DATABASE_H
