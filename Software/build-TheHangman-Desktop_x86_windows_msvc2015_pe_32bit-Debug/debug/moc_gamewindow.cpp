@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_gamewindow_t {
     QByteArrayData data[12];
-    char stringdata0[156];
+    char stringdata0[157];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,18 +35,18 @@ static const qt_meta_stringdata_gamewindow_t qt_meta_stringdata_gamewindow = {
 QT_MOC_LITERAL(0, 0, 10), // "gamewindow"
 QT_MOC_LITERAL(1, 11, 9), // "countDown"
 QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 13), // "letterPressed"
-QT_MOC_LITERAL(4, 36, 21), // "on_hintButton_clicked"
-QT_MOC_LITERAL(5, 58, 21), // "on_backButton_clicked"
-QT_MOC_LITERAL(6, 80, 16), // "update_game_word"
-QT_MOC_LITERAL(7, 97, 16), // "change_game_word"
-QT_MOC_LITERAL(8, 114, 10), // "check_word"
-QT_MOC_LITERAL(9, 125, 11), // "is_finished"
-QT_MOC_LITERAL(10, 137, 9), // "game_over"
-QT_MOC_LITERAL(11, 147, 8) // "new_game"
+QT_MOC_LITERAL(3, 22, 14), // "letter_pressed"
+QT_MOC_LITERAL(4, 37, 21), // "on_hintButton_clicked"
+QT_MOC_LITERAL(5, 59, 21), // "on_backButton_clicked"
+QT_MOC_LITERAL(6, 81, 16), // "update_game_word"
+QT_MOC_LITERAL(7, 98, 16), // "change_game_word"
+QT_MOC_LITERAL(8, 115, 10), // "check_word"
+QT_MOC_LITERAL(9, 126, 11), // "is_finished"
+QT_MOC_LITERAL(10, 138, 9), // "game_over"
+QT_MOC_LITERAL(11, 148, 8) // "new_game"
 
     },
-    "gamewindow\0countDown\0\0letterPressed\0"
+    "gamewindow\0countDown\0\0letter_pressed\0"
     "on_hintButton_clicked\0on_backButton_clicked\0"
     "update_game_word\0change_game_word\0"
     "check_word\0is_finished\0game_over\0"
@@ -101,7 +101,7 @@ void gamewindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->countDown(); break;
-        case 1: _t->letterPressed(); break;
+        case 1: _t->letter_pressed(); break;
         case 2: _t->on_hintButton_clicked(); break;
         case 3: _t->on_backButton_clicked(); break;
         case 4: _t->update_game_word((*reinterpret_cast< QString(*)>(_a[1]))); break;

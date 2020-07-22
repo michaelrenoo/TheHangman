@@ -840,7 +840,7 @@ public:
 
     void retranslateUi(QDialog *gamewindow)
     {
-        gamewindow->setWindowTitle(QCoreApplication::translate("gamewindow", "Dialog", nullptr));
+        gamewindow->setWindowTitle(QCoreApplication::translate("gamewindow", "The Hangman - Game", nullptr));
         timeLimitLabel->setText(QCoreApplication::translate("gamewindow", "time limitx", nullptr));
         hintButton->setText(QCoreApplication::translate("gamewindow", "Hint", nullptr));
         chancesLabel->setText(QCoreApplication::translate("gamewindow", "Chances:", nullptr));

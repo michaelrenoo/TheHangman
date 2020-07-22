@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>The Hangman - Game</string>
   </property>
   <widget class="QLabel" name="timeLimitLabel">
    <property name="geometry">

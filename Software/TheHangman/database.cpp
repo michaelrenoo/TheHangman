@@ -58,7 +58,7 @@ int database::scoring(const int consecutive)
     tempScore += 10;
     switch (consecutive) {
     case 0: break;
-    default: tempScore += (consecutive * 5);  // Get 5 extra points each time they guess correctly consecutively
+    default: tempScore += ((consecutive - 1) * 5);  // Get 5 extra points each time they guess correctly consecutively
         break;
     }
     return tempScore;

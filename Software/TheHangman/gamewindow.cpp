@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-
+// Game logic
 // What to do everytime the game is started
 gamewindow::gamewindow(QWidget *parent) :
     QDialog(parent),
@@ -26,10 +26,10 @@ gamewindow::gamewindow(QWidget *parent) :
         QCharRef c = alphabet[i];
         QString butName = "Button" + c;
                 letterButtons[i] = gamewindow::findChild<QPushButton *>(butName);  // search for specific Widget by calling the name
-                connect(letterButtons[i], SIGNAL(released()), this, SLOT(letterPressed()));
+                connect(letterButtons[i], SIGNAL(released()), this, SLOT(letter_pressed()));
     }
-    connect(ui->backButton, SIGNAL(released()), this, SLOT(on_backButton_clicked()));
-    connect(ui->hintButton, SIGNAL(released()), this, SLOT(on_hintButton_clicked()));
+    //connect(ui->backButton, SIGNAL(released()), this, SLOT(on_backButton_clicked()));
+    //connect(ui->hintButton, SIGNAL(released()), this, SLOT(on_hintButton_clicked()));
 
     score = data.tempScore;
     ui->chanceValueLabel->setNum(max_guesses);
@@ -98,18 +98,17 @@ void gamewindow::countDown()
 }
 
 // Initialise all buttons and its functions in the UI
-void gamewindow::letterPressed()
+void gamewindow::letter_pressed()
 {
     QPushButton *button = (QPushButton *)sender();
     QString butValue = button->text();
     string input = butValue.toStdString();
-    if (check_word(input[0], toBeGuessed) == 0)
+    if (check_word(input[0], toBeGuessed) == 0)  // When the input letter is not on the puzzle word
     {
         consecutive = 0;  // Bring back the amount of consecutive guesses to zero
         wrong_guesses++;
-        //max_limit -= 1;
         ui->chanceValueLabel->setNum(max_guesses - wrong_guesses);  // Readjust chance limit
-        game_over(wrong_guesses);
+        game_over(wrong_guesses);  // Check whether there is any chance left
     }
 }
 
@@ -120,6 +119,7 @@ void gamewindow::on_hintButton_clicked()
 
 void gamewindow::on_backButton_clicked()
 {
+    timeNumber = 0;  // Do we need this?
     gamewindow::~gamewindow();
 }
 
@@ -130,7 +130,6 @@ void gamewindow::update_game_word(QString text)
 }
 
 
-// Game logic
 // Change the characters in the QString to *
 QString gamewindow::change_game_word(QString text)
 {
@@ -148,6 +147,7 @@ QString gamewindow::change_game_word(QString text)
 }
 
 
+// Check whether the input letter match with the puzzle word
 // input = character from user, toGuess = puzzle word to be guessed
 int gamewindow::check_word(char input, QString toGuess)
 {  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
@@ -173,19 +173,9 @@ int gamewindow::check_word(char input, QString toGuess)
             ui->scoreValueLabel->setNum(score);  // consecutive stays the same!!!!!
             is_finished(guessedWord);  // Check whether all the letters are guessed
         }
-/*
-        else {  // When no
-            consecutive = 0;  // Bring back the amount of consecutive guesses to zero
-            wrong_guesses++;
-            //max_limit -= 1;
-            ui->chanceValueLabel->setNum(max_guesses - wrong_guesses);  // Readjust chance limit
-            //game_over(wrong_guesses);
-
-            //return 0;
-        } */
     }
 
-    return match;
+    return match;  // Return an integer to serve as a requirement on the letter_pressed function
 }
 
 
@@ -254,8 +244,6 @@ void gamewindow::new_game()
         }
     }
 }
-
-// TODO: Code how the score is achieved
 
 
 // TODO: Save the score in the high score
