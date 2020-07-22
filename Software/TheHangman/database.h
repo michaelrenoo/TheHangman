@@ -22,8 +22,9 @@ public:
     void addWord(QString woxrd);
     void addHint(QString hint);
     QVector<QString> getWordDatabase();
-    QString tempWord;
-    QString tempHint;
+    QString tempWord;  // Puzzle word
+    QString tempHint;  // Hint for puzzle word
+    int tempScore;  // Score obtained
 };
 
 #endif // DATABASE_H

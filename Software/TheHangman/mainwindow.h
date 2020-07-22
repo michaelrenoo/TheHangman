@@ -20,7 +20,6 @@ public:
 
 private slots:
     void on_addWordsButton_clicked();
-
     void on_playGameButton_clicked();
 
 private:
