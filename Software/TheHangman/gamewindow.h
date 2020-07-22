@@ -31,6 +31,7 @@ private slots:  // Executed when signal is submitted
     void update_game_word(QString);
     QString change_game_word(QString);
     void check_word(char, QString, QString);
+    void is_finished(QString);
 
 private:
     Ui::gamewindow *ui;

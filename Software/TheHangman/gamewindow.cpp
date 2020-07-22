@@ -140,10 +140,11 @@ void gamewindow::check_word(char input, QString toGuess, QString guessed)
         else if (input == toGuess[i])
         {
             guessed[i] = input;
-            guessedWord = guessed;
+            guessedWord = guessed;  // TODO: not use the global var?
             consecutive++;  // Increase the amount of consecutive guesses to gain higher score
             match++;  // To signal that the input is correct
             ui->puzzleWordLabel->setText(guessedWord);  // Update label
+            is_finished(guessedWord);
             // TODO: Add score thingy
         }
         else {
@@ -151,6 +152,13 @@ void gamewindow::check_word(char input, QString toGuess, QString guessed)
             wrong_guesses++;
             max_guesses--;
         }
+    }
+}
+
+
+void gamewindow::is_finished(QString guessed) {
+    if (guessed == toBeGuessed) {
+        QMessageBox::information(this, "Well Done!", "You guessed the word!\nReady to guess another?");
     }
 }
 
