@@ -71,8 +71,8 @@ static const uint qt_meta_data_gamewindow[] = {
        5,    0,   57,    2, 0x08 /* Private */,
        6,    1,   58,    2, 0x08 /* Private */,
        7,    1,   61,    2, 0x08 /* Private */,
-       8,    3,   64,    2, 0x08 /* Private */,
-       9,    1,   71,    2, 0x08 /* Private */,
+       8,    2,   64,    2, 0x08 /* Private */,
+       9,    1,   69,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -81,7 +81,7 @@ static const uint qt_meta_data_gamewindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::QString, QMetaType::QString,    2,
-    QMetaType::Void, QMetaType::Char, QMetaType::QString, QMetaType::QString,    2,    2,    2,
+    QMetaType::Void, QMetaType::Char, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::QString,    2,
 
        0        // eod
@@ -100,7 +100,7 @@ void gamewindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->update_game_word((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 5: { QString _r = _t->change_game_word((*reinterpret_cast< QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 6: _t->check_word((*reinterpret_cast< char(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3]))); break;
+        case 6: _t->check_word((*reinterpret_cast< char(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 7: _t->is_finished((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }

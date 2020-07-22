@@ -98,8 +98,7 @@ void gamewindow::letterPressed()
     QPushButton *button = (QPushButton *)sender();
     QString butValue = button->text();
     string input = butValue.toStdString();
-    //ui->puzzleWordLabel->setText(butValue);
-    check_word(input[0], toBeGuessed, guessedWord);
+    check_word(input[0], toBeGuessed);
 }
 
 void gamewindow::on_hintButton_clicked()
@@ -138,19 +137,18 @@ QString gamewindow::change_game_word(QString text)
 
 
 // input = character from user, toGuess = puzzle word to be guessed, guessed = game word as seen on the label
-void gamewindow::check_word(char input, QString toGuess, QString guessed)
+void gamewindow::check_word(char input, QString toGuess)
 {  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
     int match = 0;
     int max_limit = max_guesses;
     for (int i = 0; i < toGuess.length(); i++) {
         // Check with the guessed word whether the letter is already matched
-        if (input == guessed[i])
+        if (input == guessedWord[i])
             QMessageBox::information(this, "Used letter", "The letter you gave has been entered before.");
         // Is the input correct?
         else if (input == toGuess[i])
         {
-            guessed[i] = input;
-            guessedWord = guessed;  // TODO: not use the global var?
+            guessedWord[i] = input;
             consecutive++;  // Increase the amount of consecutive guesses to gain higher score
             match++;  // To signal that the input is correct
             ui->puzzleWordLabel->setText(guessedWord);  // Update label
