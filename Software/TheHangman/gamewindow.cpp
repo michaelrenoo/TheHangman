@@ -13,6 +13,13 @@ gamewindow::gamewindow(QWidget *parent) :
     ui->setupUi(this);
     this->getData();  // To fill database with data from .txt data
 
+    // Initialise all game objects
+    wrong_guesses = 0;
+    toBeGuessed = data.tempWord;
+    guessedWord = change_game_word(toBeGuessed);
+    consecutive = 0;
+    data.tempScore = 0;
+
     // Connect specific widgets to the functions
     QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
     for (int i = 0; i < alphabet.size(); ++i) {
@@ -24,8 +31,6 @@ gamewindow::gamewindow(QWidget *parent) :
     connect(ui->backButton, SIGNAL(released()), this, SLOT(on_backButton_clicked()));
     connect(ui->hintButton, SIGNAL(released()), this, SLOT(on_hintButton_clicked()));
 
-    toBeGuessed = data.tempWord;
-    guessedWord = change_game_word(toBeGuessed);
     score = data.tempScore;
     ui->chanceValueLabel->setNum(max_guesses);
     ui->scoreValueLabel->setNum(score);
@@ -98,7 +103,14 @@ void gamewindow::letterPressed()
     QPushButton *button = (QPushButton *)sender();
     QString butValue = button->text();
     string input = butValue.toStdString();
-    check_word(input[0], toBeGuessed);
+    if (check_word(input[0], toBeGuessed) == 0)
+    {
+        consecutive = 0;  // Bring back the amount of consecutive guesses to zero
+        wrong_guesses++;
+        //max_limit -= 1;
+        ui->chanceValueLabel->setNum(max_guesses - wrong_guesses);  // Readjust chance limit
+        game_over(wrong_guesses);
+    }
 }
 
 void gamewindow::on_hintButton_clicked()
@@ -137,36 +149,43 @@ QString gamewindow::change_game_word(QString text)
 
 
 // input = character from user, toGuess = puzzle word to be guessed, guessed = game word as seen on the label
-void gamewindow::check_word(char input, QString toGuess)
+int gamewindow::check_word(char input, QString toGuess)
 {  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
     int match = 0;
-    int max_limit = max_guesses;
+    //int max_limit = max_guesses;
     for (int i = 0; i < toGuess.length(); i++) {
         // Check with the guessed word whether the letter is already matched
         if (input == guessedWord[i])
+        {
             QMessageBox::information(this, "Used letter", "The letter you gave has been entered before.");
+            return 0;
+        }
 
         // Is the input correct?
-        else if (input == toGuess[i])  // When yes
+        if (input == toGuess[i])  // When yes
         {
             guessedWord[i] = input;
-            consecutive += 1;  // Increase the amount of consecutive guesses to gain higher score
+            consecutive++;  // Increase the amount of consecutive guesses to gain higher score
             match++;  // To signal that the input is correct
             ui->puzzleWordLabel->setText(guessedWord);  // Update label
             // Scoring
             score = data.scoring(consecutive);
-            ui->scoreValueLabel->setNum(consecutive);  // consecutive stays the same!!!!!
+            ui->scoreValueLabel->setNum(score);  // consecutive stays the same!!!!!
             is_finished(guessedWord);  // Check whether all the letters are guessed
         }
-
+/*
         else {  // When no
             consecutive = 0;  // Bring back the amount of consecutive guesses to zero
-            wrong_guesses += 1;
-            max_limit -= 1;
-            ui->chanceValueLabel->setNum(max_limit);  // Readjust chance limit
-            game_over(wrong_guesses);
-        }
+            wrong_guesses++;
+            //max_limit -= 1;
+            ui->chanceValueLabel->setNum(max_guesses - wrong_guesses);  // Readjust chance limit
+            //game_over(wrong_guesses);
+
+            //return 0;
+        } */
     }
+
+    return match;
 }
 
 
@@ -183,7 +202,7 @@ void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackov
             qDebug() << "No more game";
             // Save scores
             // Close game window
-            gamewindow::~gamewindow();
+            QWidget::close();
         }
     }
 }
@@ -204,9 +223,14 @@ void gamewindow::game_over(int guesses)
             qDebug() << "No more game";
             // Save scores
             // Close game window
-            gamewindow::~gamewindow();  // Why is this not working?
+            QWidget::close();  // Close the UI
         }
     }
+}
+
+void gamewindow::new_game()
+{
+
 }
 
 // TODO: Code how the score is achieved

@@ -28,7 +28,7 @@ public:
     QVector<QString> getWordDatabase();
     QString tempWord;  // Puzzle word
     QString tempHint;  // Hint for puzzle word
-    int tempScore = 0;  // Score obtained
+    int tempScore;  // Score obtained
 };
 
 #endif // DATABASE_H

@@ -23,11 +23,11 @@ public:
 
     // Declare all game objects
     int const max_guesses = 7;
-    int wrong_guesses = 0;  // The number increases as more wrong guesses are made
+    int wrong_guesses;  // The number increases as more wrong guesses are made
     QString toBeGuessed;  // Word to be guessed
     QString guessedWord;  // Word shown on the UI (the one with asterisks)
     int score = 0;  // The score acquired
-    int consecutive = 0;  // The amount of time user guessed correctly after one another
+    int consecutive;  // The amount of time user guessed correctly after one another
     QString alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  // String to contain all letters in the alphabet
 
 
@@ -40,9 +40,10 @@ private slots:  // Executed when signal is submitted
     void on_backButton_clicked();
     void update_game_word(QString);
     QString change_game_word(QString);
-    void check_word(char, QString);
+    int check_word(char, QString);
     void is_finished(QString);
     void game_over(int);
+    void new_game();
 
 private:
     Ui::gamewindow *ui;

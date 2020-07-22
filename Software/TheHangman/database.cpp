@@ -72,7 +72,7 @@ vector<int> database::getHighScore()
 void database::setHighScore(int score)
 {
     int index;
-    for(unsigned int i = 0; i < highScoreDatabase.size(); i++)
+    for(uint i = 0; i < highScoreDatabase.size(); i++)
     {
         if(score > highScoreDatabase[i])
         {
