@@ -21,16 +21,6 @@ public:
     void startTimer();
     void getData();
 
-    // Declare all game objects
-    int const max_guesses = 7;
-    int wrong_guesses;  // The number increases as more wrong guesses are made
-    QString toBeGuessed;  // Word to be guessed
-    QString guessedWord;  // Word shown on the UI (the one with asterisks)
-    int score = 0;  // The score acquired
-    int consecutive;  // The amount of time user guessed correctly after one another
-    QString alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  // String to contain all letters in the alphabet
-
-
 public slots:
     void countDown();
 
@@ -48,8 +38,17 @@ private slots:  // Executed when signal is submitted
 private:
     Ui::gamewindow *ui;
     QTimer *timer;
+    // Declare all game objects
     database data;
+    vector<QString> words_before;
     int timeNumber;
+    int const max_guesses = 7;
+    int wrong_guesses;  // The number increases as more wrong guesses are made
+    QString toBeGuessed;  // Word to be guessed
+    QString guessedWord;  // Word shown on the UI (the one with asterisks)
+    int score = 0;  // The score acquired
+    int consecutive;  // The amount of time user guessed correctly after one another
+    QString alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  // String to contain all letters in the alphabet
 };
 
 #endif // GAMEWINDOW_H

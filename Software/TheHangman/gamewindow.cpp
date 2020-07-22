@@ -148,7 +148,7 @@ QString gamewindow::change_game_word(QString text)
 }
 
 
-// input = character from user, toGuess = puzzle word to be guessed, guessed = game word as seen on the label
+// input = character from user, toGuess = puzzle word to be guessed
 int gamewindow::check_word(char input, QString toGuess)
 {  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
     int match = 0;
@@ -198,6 +198,7 @@ void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackov
             qDebug() << "New game";
             // Save scores
             // Load new game
+            new_game();
         } else {
             qDebug() << "No more game";
             // Save scores
@@ -219,6 +220,7 @@ void gamewindow::game_over(int guesses)
             qDebug() << "New game";
             // Save scores
             // Load new game
+            new_game();
         } else {
             qDebug() << "No more game";
             // Save scores
@@ -230,7 +232,27 @@ void gamewindow::game_over(int guesses)
 
 void gamewindow::new_game()
 {
+    words_before.push_back(toBeGuessed);  // Add puzzle word to vector so no words will be repeated in one game
+    ui->setupUi(this);  // Reinitialise UI
+    this->getData();
 
+    for (uint i = 0; i < words_before.size(); i++) {
+        if (words_before.size() < 7){
+            while (toBeGuessed == words_before[i])  // DO NOT USE WHILE!
+            {
+                this->getData();
+            }
+        }
+        else
+        {
+            QMessageBox::information(this, "All words played",
+                                     "Congratulations! You have guessed all the words in the database.\n"
+                                     "You can add more words through the \"Add Words\" menu on the main page.");
+            // Save scores
+            // Close UI
+            QWidget::close();
+        }
+    }
 }
 
 // TODO: Code how the score is achieved
