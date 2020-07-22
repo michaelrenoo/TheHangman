@@ -26,6 +26,7 @@ gamewindow::gamewindow(QWidget *parent) :
 
     toBeGuessed = data.tempWord;
     guessedWord = change_game_word(toBeGuessed);
+    score = data.tempScore;
     ui->chanceValueLabel->setNum(max_guesses);
     ui->scoreValueLabel->setNum(score);
     ui->puzzleWordLabel->setText(guessedWord);  // Change to actual puzzle word
@@ -80,14 +81,13 @@ void gamewindow::getData()
 // Timer count down
 void gamewindow::countDown()
 {
-
     QString timeString = QString::number(timeNumber / 60) + ":" + QString::number(timeNumber % 60);
 //    QTime time = QTime::currentTime();
 //    QString timeText = time.toString("hh : mm : ss");
     ui->timeLimitLabel->setText(timeString);
     timeNumber--;
     if(timeNumber == 0){
-        QMessageBox::information(this, "Time's up", "You lose");
+        QMessageBox::information(this, "Game Over!", "Time's Up!\nBetter hurry up next time.");
         gamewindow::~gamewindow();
     }
 }
@@ -149,17 +149,20 @@ void gamewindow::check_word(char input, QString toGuess)
         else if (input == toGuess[i])
         {
             guessedWord[i] = input;
-            consecutive++;  // Increase the amount of consecutive guesses to gain higher score
+            consecutive += 1;  // Increase the amount of consecutive guesses to gain higher score
             match++;  // To signal that the input is correct
             ui->puzzleWordLabel->setText(guessedWord);  // Update label
-            is_finished(guessedWord);
-            // TODO: Add score thingy
+            // Scoring
+            score = data.scoring(consecutive);
+            ui->scoreValueLabel->setNum(consecutive);  // consecutive stays the same!!!!!
+            is_finished(guessedWord);  // Check whether all the letters are guessed
         }
         else {
             consecutive = 0;  // Bring back the amount of consecutive guesses to zero
             wrong_guesses++;
             max_limit -= 1;
             ui->chanceValueLabel->setNum(max_limit);  // Readjust chance limit
+            game_over(wrong_guesses);
         }
     }
 }
@@ -168,12 +171,38 @@ void gamewindow::check_word(char input, QString toGuess)
 void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackoverflow.com/questions/13111669/yes-no-message-box-using-qmessagebox
     QMessageBox::StandardButton box;
     if (guessed == toBeGuessed) {
-        box = QMessageBox::question(this, "Well Done!", "You guessed the word!\nReady to guess another?", QMessageBox::Yes|QMessageBox::No);
+        box = QMessageBox::question(this, "Well Done!", "You guessed the word!\nReady to guess another?",
+                                    QMessageBox::Yes|QMessageBox::No);
         if (box == QMessageBox::Yes) {
             qDebug() << "New game";
+            // Save scores
             // Load new game
         } else {
             qDebug() << "No more game";
+            // Save scores
+            // Close game window
+            gamewindow::~gamewindow();
+        }
+    }
+}
+
+void gamewindow::game_over(int guesses)
+{
+    QMessageBox::StandardButton box;
+    if (guesses == max_guesses)
+    {
+        // Game over
+        box = QMessageBox::warning(this, "Game Over!", "You have used up all of your chances.\nBetter luck next time!",
+                                   QMessageBox::Retry|QMessageBox::Ok);
+        if (box == QMessageBox::Retry) {
+            qDebug() << "New game";
+            // Save scores
+            // Load new game
+        } else {
+            qDebug() << "No more game";
+            // Save scores
+            // Close game window
+            gamewindow::~gamewindow();  // Why is this not working?
         }
     }
 }

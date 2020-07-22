@@ -14,6 +14,7 @@ class database
 private:
     QVector<QString> wordDatabase;
     QVector<QString> hintDatabase;
+    vector<int> highScoreDatabase;
 
     
 public:
@@ -21,10 +22,12 @@ public:
     void getRandomText();
     void addWord(QString woxrd);
     void addHint(QString hint);
+    int scoring(int consecutive);
+    vector<int> getHighScore();
     QVector<QString> getWordDatabase();
     QString tempWord;  // Puzzle word
     QString tempHint;  // Hint for puzzle word
-    int tempScore;  // Score obtained
+    int tempScore = 0;  // Score obtained
 };
 
 #endif // DATABASE_H
