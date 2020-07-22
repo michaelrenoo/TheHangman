@@ -176,9 +176,16 @@ void gamewindow::check_word(char input, QString toGuess, QString guessed)
 }
 
 
-void gamewindow::is_finished(QString guessed) {
+void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackoverflow.com/questions/13111669/yes-no-message-box-using-qmessagebox
+    QMessageBox::StandardButton box;
     if (guessed == toBeGuessed) {
-        QMessageBox::information(this, "Well Done!", "You guessed the word!\nReady to guess another?");
+        box = QMessageBox::question(this, "Well Done!", "You guessed the word!\nReady to guess another?", QMessageBox::Yes|QMessageBox::No);
+        if (box == QMessageBox::Yes) {
+            qDebug() << "New game";
+            // Load new game
+        } else {
+            qDebug() << "No more game";
+        }
     }
 }
 
