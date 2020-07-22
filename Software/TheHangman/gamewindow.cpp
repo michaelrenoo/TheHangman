@@ -145,8 +145,9 @@ void gamewindow::check_word(char input, QString toGuess)
         // Check with the guessed word whether the letter is already matched
         if (input == guessedWord[i])
             QMessageBox::information(this, "Used letter", "The letter you gave has been entered before.");
+
         // Is the input correct?
-        else if (input == toGuess[i])
+        else if (input == toGuess[i])  // When yes
         {
             guessedWord[i] = input;
             consecutive += 1;  // Increase the amount of consecutive guesses to gain higher score
@@ -157,9 +158,10 @@ void gamewindow::check_word(char input, QString toGuess)
             ui->scoreValueLabel->setNum(consecutive);  // consecutive stays the same!!!!!
             is_finished(guessedWord);  // Check whether all the letters are guessed
         }
-        else {
+
+        else {  // When no
             consecutive = 0;  // Bring back the amount of consecutive guesses to zero
-            wrong_guesses++;
+            wrong_guesses += 1;
             max_limit -= 1;
             ui->chanceValueLabel->setNum(max_limit);  // Readjust chance limit
             game_over(wrong_guesses);

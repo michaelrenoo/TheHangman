@@ -24,6 +24,7 @@ public:
     void addHint(QString hint);
     int scoring(int consecutive);
     vector<int> getHighScore();
+    void setHighScore(int);
     QVector<QString> getWordDatabase();
     QString tempWord;  // Puzzle word
     QString tempHint;  // Hint for puzzle word

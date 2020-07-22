@@ -1,5 +1,5 @@
 #include "database.h"
-
+#include <vector>
 
 
 database::database()
@@ -64,8 +64,21 @@ int database::scoring(const int consecutive)
     return tempScore;
 }
 
-vector<int> getHighScore()
+vector<int> database::getHighScore()
 {
-    //return highScoreDatabase;
-    return vector<int>{0};  // Placeholder
+    return highScoreDatabase;
+}
+
+void database::setHighScore(int score)
+{
+    int index;
+    for(unsigned int i = 0; i < highScoreDatabase.size(); i++)
+    {
+        if(score > highScoreDatabase[i])
+        {
+            index = i;
+            //highScoreDatabase.insert(index, score);
+            break;
+        }
+    }
 }
