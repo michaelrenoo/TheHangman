@@ -82,7 +82,7 @@ void gamewindow::getData()
 
     data.getRandomText();
     qDebug() << data.tempWord;
-    timeNumber = 60 + data.tempWord.count()*10;
+    timeNumber = 30 + data.tempWord.count()*10;
 }
 
 void gamewindow::countDown()
@@ -93,7 +93,10 @@ void gamewindow::countDown()
 //    QString timeText = time.toString("hh : mm : ss");
     ui->timeLimitLabel->setText(timeString);
     timeNumber--;
-
+    if(timeNumber == 0){
+        QMessageBox::information(this, "Time's up", "You lose");
+        gamewindow::~gamewindow();
+    }
 }
 
 // TODO: Initialise all buttons and its functions in the UI
