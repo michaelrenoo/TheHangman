@@ -27,7 +27,7 @@ public:
     QTextEdit *gameTitleTextEdit;
     QPushButton *playGameButton;
     QPushButton *addWordsButton;
-    QPushButton *scroreBoardButton;
+    QPushButton *scroreboardButton;
     QLabel *gameLogoLabel;
     QStatusBar *statusbar;
 
@@ -75,11 +75,11 @@ public:
 "QPushButton:pressed {\n"
 "	background-color: #305F72;\n"
 "}"));
-        scroreBoardButton = new QPushButton(centralwidget);
-        scroreBoardButton->setObjectName(QString::fromUtf8("scroreBoardButton"));
-        scroreBoardButton->setGeometry(QRect(460, 410, 181, 52));
-        scroreBoardButton->setFont(font1);
-        scroreBoardButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        scroreboardButton = new QPushButton(centralwidget);
+        scroreboardButton->setObjectName(QString::fromUtf8("scroreboardButton"));
+        scroreboardButton->setGeometry(QRect(460, 410, 181, 52));
+        scroreboardButton->setFont(font1);
+        scroreboardButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	background-color: #568EA6;\n"
 "}\n"
 "\n"
@@ -98,7 +98,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         QWidget::setTabOrder(gameTitleTextEdit, playGameButton);
         QWidget::setTabOrder(playGameButton, addWordsButton);
-        QWidget::setTabOrder(addWordsButton, scroreBoardButton);
+        QWidget::setTabOrder(addWordsButton, scroreboardButton);
 
         retranslateUi(MainWindow);
 
@@ -115,7 +115,7 @@ public:
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:36pt;\">The Hangman</span></p></body></html>", nullptr));
         playGameButton->setText(QCoreApplication::translate("MainWindow", "Play Game", nullptr));
         addWordsButton->setText(QCoreApplication::translate("MainWindow", "Add Words", nullptr));
-        scroreBoardButton->setText(QCoreApplication::translate("MainWindow", "Scoreboard", nullptr));
+        scroreboardButton->setText(QCoreApplication::translate("MainWindow", "Scoreboard", nullptr));
         gameLogoLabel->setText(QString());
     } // retranslateUi
 

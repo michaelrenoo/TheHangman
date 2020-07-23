@@ -166,11 +166,12 @@ public:
         HMLabel8->setAlignment(Qt::AlignCenter);
         puzzleWordLabel = new QLabel(gamewindow);
         puzzleWordLabel->setObjectName(QString::fromUtf8("puzzleWordLabel"));
-        puzzleWordLabel->setGeometry(QRect(410, 130, 301, 51));
+        puzzleWordLabel->setGeometry(QRect(360, 100, 350, 100));
         QFont font6;
         font6.setPointSize(35);
         font6.setUnderline(true);
         puzzleWordLabel->setFont(font6);
+        puzzleWordLabel->setAlignment(Qt::AlignCenter);
         ButtonA = new QPushButton(gamewindow);
         ButtonA->setObjectName(QString::fromUtf8("ButtonA"));
         ButtonA->setGeometry(QRect(370, 230, 42, 42));

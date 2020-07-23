@@ -26,6 +26,8 @@ void database::getRandomText()
     uniform_int_distribution<int> distribution (0, wordDatabase.count()-1); //https://www.youtube.com/watch?v=axKBgASRmQs
     int randomNumber = distribution(*QRandomGenerator::global());
     qDebug() << randomNumber;
+    qDebug() << wordDatabase.count();
+    qDebug() << wordDatabase.size();
     tempWord = wordDatabase.takeAt(randomNumber);
     tempHint = hintDatabase.takeAt(randomNumber);
 }

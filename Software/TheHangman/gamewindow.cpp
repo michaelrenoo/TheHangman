@@ -120,12 +120,6 @@ void gamewindow::on_backButton_clicked()
     gamewindow::~gamewindow();
 }
 
-// TODO: do we need this?
-void gamewindow::update_game_word(QString text)
-{
-    ui->puzzleWordLabel->setText(text);
-}
-
 
 // Change the characters in the QString to *
 QString gamewindow::change_game_word(QString text)
@@ -140,7 +134,6 @@ QString gamewindow::change_game_word(QString text)
         }
     }
     return result;
-    //return QString(text.length(), '*');
 }
 
 

@@ -5,6 +5,7 @@
 #include <addwords.h>
 #include <database.h>
 #include <gamewindow.h>
+#include <scoreboard.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,10 +22,12 @@ public:
 private slots:
     void on_addWordsButton_clicked();
     void on_playGameButton_clicked();
+    void on_scoreboardButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     addwords *addwordsWindow;
     gamewindow *game;
+    scoreboard *scoreboard;
 };
 #endif // MAINWINDOW_H

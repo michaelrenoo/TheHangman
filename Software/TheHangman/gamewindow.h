@@ -28,7 +28,6 @@ private slots:  // Executed when signal is submitted
     void letter_pressed();
     void on_hintButton_clicked();
     void on_backButton_clicked();
-    void update_game_word(QString);
     QString change_game_word(QString);
     int check_word(char, QString);
     void is_finished(QString);

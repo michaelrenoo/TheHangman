@@ -28,3 +28,8 @@ void MainWindow::on_playGameButton_clicked()
     // game->getData();
     game->show();
 }
+
+void MainWindow::on_scoreboardButton_clicked()
+{
+    scoreboard->show();
+}

@@ -20,18 +20,21 @@ SOURCES += \
     database.cpp \
     gamewindow.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    scoreboard.cpp
 
 HEADERS += \
     addwords.h \
     database.h \
     gamewindow.h \
-    mainwindow.h
+    mainwindow.h \
+    scoreboard.h
 
 FORMS += \
     addwords.ui \
     gamewindow.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    scoreboard.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

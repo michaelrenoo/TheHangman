@@ -314,10 +314,10 @@ QPushButton:pressed {
   <widget class="QLabel" name="puzzleWordLabel">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>130</y>
-     <width>301</width>
-     <height>51</height>
+     <x>360</x>
+     <y>100</y>
+     <width>350</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="font">
@@ -328,6 +328,9 @@ QPushButton:pressed {
    </property>
    <property name="text">
     <string>Puzzle Word</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="ButtonA">
