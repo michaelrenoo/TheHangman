@@ -265,6 +265,8 @@ void gamewindow::new_game()
     // TODO: How to restart game
     // Check whether there are still words left to be played
     if (words_before.size() != data.databaseSize) {
+        qDebug() << data.databaseSize;
+        qDebug() << words_before.size();
         for (uint i = 0; i < words_before.size(); i++) {
             if (data.tempWord == words_before[i]) {
                 gamewindow *game = new gamewindow();
