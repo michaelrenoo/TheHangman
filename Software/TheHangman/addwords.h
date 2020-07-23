@@ -20,7 +20,7 @@ public:
     ~addwords();
     void showDatabase();
 
-private slots:
+private slots:  // Called when signal is given
     void on_buttonBox_accepted();
     void on_buttonBox_rejected();
 
