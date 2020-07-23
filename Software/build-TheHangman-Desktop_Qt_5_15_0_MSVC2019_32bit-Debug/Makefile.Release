@@ -70,7 +70,7 @@ OBJECTS       = release\addwords.obj \
 		release\moc_mainwindow.obj \
 		release\moc_scoreboard.obj
 
-DIST          =  ..\TheHangman\addwords.h \
+DIST          = ../build-TheHangman-Desktop_Qt_5_15_0_MSVC2019_32bit-Release/release/mainMenuImage.png ..\TheHangman\addwords.h \
 		..\TheHangman\database.h \
 		..\TheHangman\gamewindow.h \
 		..\TheHangman\mainwindow.h \
@@ -675,6 +675,13 @@ release\moc_scoreboard.cpp: ..\TheHangman\scoreboard.h \
 		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\qfiledevice.h \
 		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qvector2d.h \
 		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qtouchdevice.h \
+		..\TheHangman\database.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QVector \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QFile \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QTextStream \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QDebug \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QRandomGenerator \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\qrandom.h \
 		release\moc_predefs.h \
 		D:\Apps\Qt\5.15.0\msvc2019\bin\moc.exe
 	D:\Apps\Qt\5.15.0\msvc2019\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include "D:/OneDrive/Ingenieueinformatik HTW Berlin/Sem 5/Vertiefung Programmierung/Software/build-TheHangman-Desktop_Qt_5_15_0_MSVC2019_32bit-Debug/release/moc_predefs.h" -ID:/Apps/Qt/5.15.0/msvc2019/mkspecs/win32-msvc -I"D:/OneDrive/Ingenieueinformatik HTW Berlin/Sem 5/Vertiefung Programmierung/Software/TheHangman" -ID:/Apps/Qt/5.15.0/msvc2019/include -ID:/Apps/Qt/5.15.0/msvc2019/include/QtWidgets -ID:/Apps/Qt/5.15.0/msvc2019/include/QtGui -ID:/Apps/Qt/5.15.0/msvc2019/include/QtANGLE -ID:/Apps/Qt/5.15.0/msvc2019/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" ..\TheHangman\scoreboard.h -o release\moc_scoreboard.cpp
@@ -1464,7 +1471,41 @@ release\scoreboard.obj: ..\TheHangman\scoreboard.cpp ..\TheHangman\scoreboard.h 
 		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\qfiledevice.h \
 		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qvector2d.h \
 		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qtouchdevice.h \
-		ui_scoreboard.h
+		..\TheHangman\database.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QVector \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QFile \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QTextStream \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QDebug \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QRandomGenerator \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\qrandom.h \
+		ui_scoreboard.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\QVariant \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\QApplication \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qapplication.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\qcoreapplication.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtCore\qeventloop.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qdesktopwidget.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qguiapplication.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qinputmethod.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\QDialogButtonBox \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qdialogbuttonbox.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\QLabel \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qlabel.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qframe.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\QPlainTextEdit \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qplaintextedit.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qtextedit.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtWidgets\qabstractscrollarea.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qtextdocument.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qtextoption.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qtextcursor.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qtextformat.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qpen.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qabstracttextdocumentlayout.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qtextlayout.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qglyphrun.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qrawfont.h \
+		D:\Apps\Qt\5.15.0\msvc2019\include\QtGui\qfontdatabase.h
 
 release\moc_addwords.obj: release\moc_addwords.cpp 
 

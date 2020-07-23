@@ -40,3 +40,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    ../build-TheHangman-Desktop_Qt_5_15_0_MSVC2019_32bit-Release/release/mainMenuImage.png
