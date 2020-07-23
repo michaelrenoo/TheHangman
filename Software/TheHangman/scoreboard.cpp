@@ -14,6 +14,11 @@ scoreboard::~scoreboard()
     delete ui;
 }
 
+
+///
+/// \brief scoreboard::on_buttonBox_clicked
+/// Handler when the cancelButton is clicked
+///
 void scoreboard::on_buttonBox_clicked()
 {
     this->close();

@@ -15,7 +15,7 @@ public:
     explicit scoreboard(QWidget *parent = nullptr);
     ~scoreboard();
 
-private slots:
+private slots:  // Called when signal is given
     void on_buttonBox_clicked();
 
 private:

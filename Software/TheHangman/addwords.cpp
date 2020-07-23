@@ -13,7 +13,11 @@ addwords::~addwords()
     delete ui;
 }
 
-//read the database in .txt file
+
+///
+/// \brief addwords::showDatabase
+/// Read the database in .txt file
+///
 void addwords::showDatabase()
 {
     QString wordsDatabasePath = qApp->applicationDirPath(); //location of the file , assuming in application dir
@@ -39,7 +43,11 @@ void addwords::showDatabase()
     hintsDatabaseFile.close();
 }
 
-//save any changes in the database .txt file
+
+///
+/// \brief addwords::on_buttonBox_accepted
+/// Save any changes in the database .txt file
+///
 void addwords::on_buttonBox_accepted()
 {
     QString wordsDatabasePath = qApp->applicationDirPath(); //location of the file , assuming in application dir. source: https://forum.qt.io/topic/72651/qiodevice-write-device-not-open-when-file-is-open/3
@@ -74,6 +82,11 @@ void addwords::on_buttonBox_accepted()
     this->close();
 }
 
+
+///
+/// \brief addwords::on_buttonBox_rejected
+/// Cancel any changes and go back to main menu
+///
 void addwords::on_buttonBox_rejected()
 {
     this->close();

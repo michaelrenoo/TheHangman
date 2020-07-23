@@ -19,7 +19,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
+private slots:  // Called when a signal is given
     void on_addWordsButton_clicked();
     void on_playGameButton_clicked();
     void on_scoreboardButton_clicked();

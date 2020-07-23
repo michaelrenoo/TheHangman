@@ -14,6 +14,10 @@ MainWindow::~MainWindow()
 }
 
 
+///
+/// \brief MainWindow::on_addWordsButton_clicked
+/// Handler when the addWordsButton is clicked
+///
 void MainWindow::on_addWordsButton_clicked()
 {
     // https://stackoverflow.com/questions/17988292/how-to-open-a-new-window-from-the-main-window-in-qt
@@ -22,12 +26,22 @@ void MainWindow::on_addWordsButton_clicked()
     addwordsWindow->show();
 }
 
+
+///
+/// \brief MainWindow::on_playGameButton_clicked
+/// Handler when the playGameButton is clicked
+///
 void MainWindow::on_playGameButton_clicked()
 {
     game = new gamewindow();
     game->show();
 }
 
+
+///
+/// \brief MainWindow::on_scoreboardButton_clicked
+/// Handler when the scoreboardButton is clicked
+///
 void MainWindow::on_scoreboardButton_clicked()
 {
     scoreboardWindow = new scoreboard();
