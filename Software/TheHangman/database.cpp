@@ -20,7 +20,6 @@ database::database()
 
 
 }
-
 void database::getRandomText()
 {
     uniform_int_distribution<int> distribution (0, wordDatabase.count()-1); //https://www.youtube.com/watch?v=axKBgASRmQs
