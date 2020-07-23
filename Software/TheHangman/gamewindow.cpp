@@ -5,7 +5,12 @@
 using namespace std;
 
 // Game logic
-// What to do everytime the game is started
+///
+/// \brief gamewindow::gamewindow
+/// What to do everytime the dialog is called
+/// \param parent
+/// parent dialog (main window)
+///
 gamewindow::gamewindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::gamewindow)
@@ -15,12 +20,21 @@ gamewindow::gamewindow(QWidget *parent) :
     game_start();
 }
 
-gamewindow::~gamewindow()  // Deconstructor
+
+///
+/// \brief gamewindow::~gamewindow
+/// Deconstructor
+///
+gamewindow::~gamewindow()
 {
     delete ui;
 }
 
-//start the time limit
+
+///
+/// \brief gamewindow::startTimer
+/// Start the time limit
+///
 void gamewindow::startTimer()
 {
     timer = new QTimer(this);
@@ -32,7 +46,15 @@ void gamewindow::startTimer()
         gamewindow::~gamewindow();
     }
 }
-// get data from two .txt files as the database
+
+
+///
+/// \brief gamewindow::getData
+/// Get data from two .txt files as the database
+/// The files are called WordsDatabase(TheHangman).txt
+/// and HintsDatabase(TheHangman).txt and are expected
+/// to be in the same location of the game file
+///
 void gamewindow::getData()
 {
     QString wordsDatabasePath = qApp->applicationDirPath(); // location of the file , assuming in application dir
@@ -63,7 +85,10 @@ void gamewindow::getData()
 }
 
 
-// Timer count down
+///
+/// \brief gamewindow::countDown
+/// Timer count down
+///
 void gamewindow::countDown()
 {
     QString timeString = QString::number(timeNumber / 60) + ":" + QString::number(timeNumber % 60);
@@ -71,7 +96,11 @@ void gamewindow::countDown()
     timeNumber--;
 }
 
-// Initialise all buttons and its functions in the UI
+
+///
+/// \brief gamewindow::letter_pressed
+/// Handler for when the letter buttons are pressed in the UI
+///
 void gamewindow::letter_pressed()
 {
     QPushButton *button = (QPushButton *)sender();
@@ -82,7 +111,7 @@ void gamewindow::letter_pressed()
         consecutive = 0;  // Bring back the amount of consecutive guesses to zero
         wrong_guesses++;
         ui->chanceValueLabel->setNum(max_guesses - wrong_guesses);  // Readjust chance limit
-        switch (wrong_guesses) {
+        switch (wrong_guesses) {  // Show the correct label according to the amount of chances left
         case 1: ui->HMLabel1->show();
             break;
         case 2: ui->HMLabel2->show();
@@ -104,6 +133,11 @@ void gamewindow::letter_pressed()
     }
 }
 
+
+///
+/// \brief gamewindow::on_hintButton_clicked
+/// Handler for when the hint button is clicked
+///
 void gamewindow::on_hintButton_clicked()
 {
     data.tempScore -= 20;
@@ -112,6 +146,11 @@ void gamewindow::on_hintButton_clicked()
     QMessageBox::information(this, "Hint", data.tempHint);
 }
 
+
+///
+/// \brief gamewindow::on_backButton_clicked
+/// Handler for when the back button (give up button) is clicked
+///
 void gamewindow::on_backButton_clicked()
 {
     timeNumber = 0;  // Do we need this?
@@ -119,7 +158,14 @@ void gamewindow::on_backButton_clicked()
 }
 
 
-// Change the characters in the QString to *
+///
+/// \brief gamewindow::change_game_word
+/// Change the characters in the QString to *
+/// \param text
+/// The puzzle word that needs to be changed to asterisks
+/// \return
+/// The QString as a set of asterisks
+///
 QString gamewindow::change_game_word(QString text)
 {
     QString result = "";
@@ -135,8 +181,17 @@ QString gamewindow::change_game_word(QString text)
 }
 
 
-// Check whether the input letter match with the puzzle word
-// input = character from user, toGuess = puzzle word to be guessed
+///
+/// \brief gamewindow::check_word
+/// Check whether the input letter match with the puzzle word
+/// \param input
+/// character from user
+/// \param toGuess
+/// puzzle word to be guessed
+/// \return
+/// an integer to serve as a requirement on the letter_pressed function
+/// 1 when the letter is correct, 0 when the letter has been entered before or is false
+///
 int gamewindow::check_word(char input, QString toGuess)
 {  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
     int match = 0;
@@ -158,15 +213,21 @@ int gamewindow::check_word(char input, QString toGuess)
             ui->puzzleWordLabel->setText(guessedWord);  // Update label
             // Scoring
             score = data.scoring(consecutive);
-            ui->scoreValueLabel->setNum(score);  // consecutive stays the same!!!!!
+            ui->scoreValueLabel->setNum(score);
             is_finished(guessedWord);  // Check whether all the letters are guessed
         }
     }
 
-    return match;  // Return an integer to serve as a requirement on the letter_pressed function
+    return match;
 }
 
 
+///
+/// \brief gamewindow::is_finished
+/// When the puzzle word is guessed
+/// \param guessed
+/// The puzzle word to be compared to the input from user
+///
 void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackoverflow.com/questions/13111669/yes-no-message-box-using-qmessagebox
     QMessageBox::StandardButton box;
     if (guessed == toBeGuessed) {
@@ -187,7 +248,10 @@ void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackov
 }
 
 
-// Function to restart all widgets in the UI
+///
+/// \brief gamewindow::game_start
+/// Functions to initialise all game objects and restart all widgets in the UI
+///
 void gamewindow::game_start()
 {
     // Initialise all game objects
@@ -198,7 +262,7 @@ void gamewindow::game_start()
     data.tempScore = 0;
     score = 0;
 
-    // Connect specific widgets to the functions
+    // Connect the letter buttons to each letters in the UI
     QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
     for (int i = 0; i < alphabet.size(); ++i) {
         QCharRef c = alphabet[i];
@@ -206,8 +270,6 @@ void gamewindow::game_start()
                 letterButtons[i] = gamewindow::findChild<QPushButton *>(butName);  // search for specific Widget by calling the name
                 connect(letterButtons[i], SIGNAL(released()), this, SLOT(letter_pressed()));
     }
-    //connect(ui->backButton, SIGNAL(released()), this, SLOT(on_backButton_clicked()));
-    //connect(ui->hintButton, SIGNAL(released()), this, SLOT(on_hintButton_clicked()));
 
     score = data.tempScore;
     ui->chanceValueLabel->setNum(max_guesses);  // Change to max guesses
@@ -229,6 +291,12 @@ void gamewindow::game_start()
 }
 
 
+///
+/// \brief gamewindow::game_over
+/// When the user has no more chances to guess the word anymore
+/// \param guesses
+/// The puzzle word to be compared to the input from user
+///
 void gamewindow::game_over(int guesses)
 {
     QMessageBox::StandardButton box;
@@ -251,24 +319,34 @@ void gamewindow::game_over(int guesses)
     }
 }
 
+
+///
+/// \brief gamewindow::new_game
+/// When the user chooses to keep on playing after a puzzle word has been correctly guessed
+///
 void gamewindow::new_game()
 {
-    words_before.push_back(toBeGuessed);  // Add puzzle word to vector so no words will be repeated in one game
+    scoreBuffer = data.tempScore;
+    data.previousWords.push_back(toBeGuessed.toStdString());  // Add puzzle word to vector so no words will be repeated in one game
     ui->setupUi(this);  // Reinitialise UI
     this->getData();
 
-    // TODO: How to restart game
+    // Restart game
     // Check whether there are still words left to be played
-    if (words_before.size() != data.databaseSize) {
+    if (data.previousWords.size() != data.databaseSize) {
         qDebug() << data.databaseSize;
-        qDebug() << words_before.size();
-        for (uint i = 0; i < words_before.size(); i++) {
-            if (data.tempWord == words_before[i]) {
-                this->close();
-                gamewindow *game = new gamewindow();
-                game->show();
+        qDebug() << data.previousWords.size();
+        for (uint i = 0; i < data.previousWords.size(); i++) {
+            if (data.tempWord.toStdString() == data.previousWords[i]) {  // Check whether the word has already been played
+                this->getData();
             }
         }
+        QWidget::close();
+        gamewindow *game = new gamewindow();
+        game->show();
+        qDebug() << "score buffer" << scoreBuffer;
+        qDebug() << data.previousWords.size();
+        data.tempScore = scoreBuffer;
     }
     else
     {
@@ -280,7 +358,4 @@ void gamewindow::new_game()
         QWidget::close();
     }
 }
-
-
-// TODO: Save the score in the high score
 

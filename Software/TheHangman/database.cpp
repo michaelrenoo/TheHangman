@@ -21,7 +21,11 @@ database::database()
 
 }
 
-//get random word and hint
+
+///
+/// \brief database::getRandomText
+/// Get random word and hint
+///
 void database::getRandomText()
 {
     uniform_int_distribution<int> distribution (0, wordDatabase.count()-1); //https://www.youtube.com/watch?v=axKBgASRmQs
@@ -33,7 +37,13 @@ void database::getRandomText()
     tempHint = hintDatabase.takeAt(randomNumber);
 }
 
-//input words from .txt file to wordDatabase in this programm
+
+///
+/// \brief database::addWord
+/// Add more words to the database file
+/// \param word
+/// The words to be added
+///
 void database::addWord(QString word)
 {
     wordDatabase.clear();
@@ -43,7 +53,13 @@ void database::addWord(QString word)
     }
 }
 
-//input hints from .txt file to hintDatabase in this programm
+
+///
+/// \brief database::addHint
+/// Add more hints to the database file
+/// \param hint
+/// The hints to be added
+///
 void database::addHint(QString hint)
 {
     hintDatabase.clear();
@@ -53,11 +69,27 @@ void database::addHint(QString hint)
     }
 }
 
+
+///
+/// \brief database::getWordDatabase
+/// Getter for the wordDatabase
+/// \return
+/// wordDatabase
+///
 QVector<QString> database::getWordDatabase()
 {
     return wordDatabase;
 }
 
+
+///
+/// \brief database::scoring
+/// The scoring algorithm
+/// \param consecutive
+/// How many letters are guessed correctly in a row
+/// \return
+/// The score as integer
+///
 int database::scoring(const int consecutive)
 {
     tempScore += 10;
@@ -69,11 +101,25 @@ int database::scoring(const int consecutive)
     return tempScore;
 }
 
+
+///
+/// \brief database::getHighScore
+/// Getter for the highScoreDatabase vector
+/// \return
+/// highScoreDatabase
+///
 vector<int> database::getHighScore()
 {
     return highScoreDatabase;
 }
 
+
+///
+/// \brief database::setHighScore
+/// Setter for the high score
+/// \param score
+/// The score attained by the user
+///
 void database::setHighScore(int score)
 {
     int index;
