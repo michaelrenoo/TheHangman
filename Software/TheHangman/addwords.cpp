@@ -13,6 +13,7 @@ addwords::~addwords()
     delete ui;
 }
 
+//read the database in .txt file
 void addwords::showDatabase()
 {
     QString wordsDatabasePath = qApp->applicationDirPath(); //location of the file , assuming in application dir
@@ -38,6 +39,7 @@ void addwords::showDatabase()
     hintsDatabaseFile.close();
 }
 
+//save any changes in the database .txt file
 void addwords::on_buttonBox_accepted()
 {
     QString wordsDatabasePath = qApp->applicationDirPath(); //location of the file , assuming in application dir. source: https://forum.qt.io/topic/72651/qiodevice-write-device-not-open-when-file-is-open/3
@@ -64,8 +66,8 @@ void addwords::on_buttonBox_accepted()
     hintsDatabaseFile.flush();
     hintsDatabaseFile.close();
 
-    data.addWord(word);
-    data.addHint(hint);
+    data.addWord(word); //input the words data from .txt file to the programm
+    data.addHint(hint); //input the hints data from .txt file to the programm
     foreach(QString word, data.getWordDatabase()){  //https://stackoverflow.com/questions/771008/for-loop-vs-qts-foreach-in-c
         qDebug() << word;
     }

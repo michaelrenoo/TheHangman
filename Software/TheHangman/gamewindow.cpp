@@ -20,14 +20,18 @@ gamewindow::~gamewindow()  // Deconstructor
     delete ui;
 }
 
+//start the time limit
 void gamewindow::startTimer()
 {
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(countDown()));
     timer->start(1000);
+    if(timeNumber == 0){
+        QMessageBox::information(this, "Game Over!", "Time's Up!\nBetter hurry up next time.");
+        timer->stop();
+        gamewindow::~gamewindow();
+    }
 }
-
-
 // get data from two .txt files as the database
 void gamewindow::getData()
 {
@@ -53,9 +57,9 @@ void gamewindow::getData()
     data.addHint(hint);
     hintsDatabaseFile.close();
 
-    data.getRandomText();
+    data.getRandomText(); //get the random text
     qDebug() << data.tempWord;
-    timeNumber = 30 + data.tempWord.count()*10;
+    timeNumber = 30 + data.tempWord.count()*10; //set the time limit
 }
 
 
@@ -63,14 +67,8 @@ void gamewindow::getData()
 void gamewindow::countDown()
 {
     QString timeString = QString::number(timeNumber / 60) + ":" + QString::number(timeNumber % 60);
-//    QTime time = QTime::currentTime();
-//    QString timeText = time.toString("hh : mm : ss");
     ui->timeLimitLabel->setText(timeString);
     timeNumber--;
-    if(timeNumber == 0){
-        QMessageBox::information(this, "Game Over!", "Time's Up!\nBetter hurry up next time.");
-        gamewindow::~gamewindow();
-    }
 }
 
 // Initialise all buttons and its functions in the UI

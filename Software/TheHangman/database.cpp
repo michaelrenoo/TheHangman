@@ -20,6 +20,8 @@ database::database()
 
 
 }
+
+//get random word and hint
 void database::getRandomText()
 {
     uniform_int_distribution<int> distribution (0, wordDatabase.count()-1); //https://www.youtube.com/watch?v=axKBgASRmQs
@@ -31,6 +33,7 @@ void database::getRandomText()
     tempHint = hintDatabase.takeAt(randomNumber);
 }
 
+//input words from .txt file to wordDatabase in this programm
 void database::addWord(QString word)
 {
     wordDatabase.clear();
@@ -40,6 +43,7 @@ void database::addWord(QString word)
     }
 }
 
+//input hints from .txt file to hintDatabase in this programm
 void database::addHint(QString hint)
 {
     hintDatabase.clear();
