@@ -266,6 +266,7 @@ void gamewindow::new_game()
         qDebug() << words_before.size();
         for (uint i = 0; i < words_before.size(); i++) {
             if (data.tempWord == words_before[i]) {
+                this->close();
                 gamewindow *game = new gamewindow();
                 game->show();
             }
