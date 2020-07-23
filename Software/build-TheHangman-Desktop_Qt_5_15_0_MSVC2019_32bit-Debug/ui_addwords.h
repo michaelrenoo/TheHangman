@@ -33,9 +33,11 @@ public:
         if (addwords->objectName().isEmpty())
             addwords->setObjectName(QString::fromUtf8("addwords"));
         addwords->resize(800, 600);
+        addwords->setStyleSheet(QString::fromUtf8("background-color: #F1D1B5;"));
         buttonBox = new QDialogButtonBox(addwords);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setGeometry(QRect(400, 490, 341, 32));
+        buttonBox->setStyleSheet(QString::fromUtf8("background-color: #568EA6;"));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         label = new QLabel(addwords);
@@ -51,9 +53,11 @@ public:
         addWordText = new QPlainTextEdit(addwords);
         addWordText->setObjectName(QString::fromUtf8("addWordText"));
         addWordText->setGeometry(QRect(80, 70, 281, 351));
+        addWordText->setStyleSheet(QString::fromUtf8("background-color: #F0FFFF;"));
         addHintText = new QPlainTextEdit(addwords);
         addHintText->setObjectName(QString::fromUtf8("addHintText"));
         addHintText->setGeometry(QRect(460, 70, 301, 351));
+        addHintText->setStyleSheet(QString::fromUtf8("background-color: #F0FFFF;"));
         label_3 = new QLabel(addwords);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(80, 500, 371, 16));
@@ -70,7 +74,7 @@ public:
 
     void retranslateUi(QDialog *addwords)
     {
-        addwords->setWindowTitle(QCoreApplication::translate("addwords", "Dialog", nullptr));
+        addwords->setWindowTitle(QCoreApplication::translate("addwords", "The Hangman - Add Words", nullptr));
         label->setText(QCoreApplication::translate("addwords", "Word:", nullptr));
         label_2->setText(QCoreApplication::translate("addwords", "Hint:", nullptr));
         addWordText->setPlainText(QString());

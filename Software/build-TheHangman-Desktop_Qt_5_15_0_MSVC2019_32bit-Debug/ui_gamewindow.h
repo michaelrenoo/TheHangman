@@ -27,14 +27,14 @@ public:
     QLabel *scoreLabel;
     QLabel *scoreValueLabel;
     QPushButton *backButton;
-    QLabel *baseHMLabel;
-    QLabel *firstHMLabel;
-    QLabel *secondHMLabel;
-    QLabel *thirdHMLabel;
-    QLabel *fourthHMLabel;
-    QLabel *fifthHMLabel;
-    QLabel *sixthHMLabel;
-    QLabel *seventhHMLabel;
+    QLabel *HMLabel1;
+    QLabel *HMLabel2;
+    QLabel *HMLabel3;
+    QLabel *HMLabel4;
+    QLabel *HMLabel5;
+    QLabel *HMLabel7;
+    QLabel *HMLabel6;
+    QLabel *HMLabel8;
     QLabel *puzzleWordLabel;
     QPushButton *ButtonA;
     QPushButton *ButtonB;
@@ -69,6 +69,7 @@ public:
             gamewindow->setObjectName(QString::fromUtf8("gamewindow"));
         gamewindow->setEnabled(true);
         gamewindow->resize(800, 600);
+        gamewindow->setStyleSheet(QString::fromUtf8("background-color: #F1D1B5;"));
         timeLimitLabel = new QLabel(gamewindow);
         timeLimitLabel->setObjectName(QString::fromUtf8("timeLimitLabel"));
         timeLimitLabel->setGeometry(QRect(430, 30, 101, 21));
@@ -79,6 +80,13 @@ public:
         hintButton->setObjectName(QString::fromUtf8("hintButton"));
         hintButton->setGeometry(QRect(30, 20, 101, 41));
         hintButton->setFont(font);
+        hintButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: #568EA6;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: #305F72;\n"
+"}"));
         chancesLabel = new QLabel(gamewindow);
         chancesLabel->setObjectName(QString::fromUtf8("chancesLabel"));
         chancesLabel->setEnabled(true);
@@ -110,52 +118,60 @@ public:
         QFont font3;
         font3.setPointSize(14);
         backButton->setFont(font3);
-        baseHMLabel = new QLabel(gamewindow);
-        baseHMLabel->setObjectName(QString::fromUtf8("baseHMLabel"));
-        baseHMLabel->setGeometry(QRect(30, 500, 121, 21));
-        baseHMLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 0, 0)"));
-        firstHMLabel = new QLabel(gamewindow);
-        firstHMLabel->setObjectName(QString::fromUtf8("firstHMLabel"));
-        firstHMLabel->setEnabled(true);
-        firstHMLabel->setGeometry(QRect(40, 100, 21, 401));
-        firstHMLabel->setStyleSheet(QString::fromUtf8("background-color: brown;"));
-        secondHMLabel = new QLabel(gamewindow);
-        secondHMLabel->setObjectName(QString::fromUtf8("secondHMLabel"));
-        secondHMLabel->setGeometry(QRect(60, 100, 171, 16));
-        secondHMLabel->setStyleSheet(QString::fromUtf8("background-color: brown;"));
-        thirdHMLabel = new QLabel(gamewindow);
-        thirdHMLabel->setObjectName(QString::fromUtf8("thirdHMLabel"));
-        thirdHMLabel->setGeometry(QRect(210, 110, 16, 71));
-        thirdHMLabel->setStyleSheet(QString::fromUtf8("background-color:brown;"));
-        fourthHMLabel = new QLabel(gamewindow);
-        fourthHMLabel->setObjectName(QString::fromUtf8("fourthHMLabel"));
-        fourthHMLabel->setGeometry(QRect(180, 170, 80, 80));
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: #F18C8E;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: #F0B7A4;\n"
+"}"));
+        HMLabel1 = new QLabel(gamewindow);
+        HMLabel1->setObjectName(QString::fromUtf8("HMLabel1"));
+        HMLabel1->setGeometry(QRect(30, 500, 121, 21));
+        HMLabel1->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 0, 0)"));
+        HMLabel2 = new QLabel(gamewindow);
+        HMLabel2->setObjectName(QString::fromUtf8("HMLabel2"));
+        HMLabel2->setEnabled(true);
+        HMLabel2->setGeometry(QRect(40, 100, 21, 401));
+        HMLabel2->setStyleSheet(QString::fromUtf8("background-color: brown;"));
+        HMLabel3 = new QLabel(gamewindow);
+        HMLabel3->setObjectName(QString::fromUtf8("HMLabel3"));
+        HMLabel3->setGeometry(QRect(60, 100, 171, 16));
+        HMLabel3->setStyleSheet(QString::fromUtf8("background-color: brown;"));
+        HMLabel4 = new QLabel(gamewindow);
+        HMLabel4->setObjectName(QString::fromUtf8("HMLabel4"));
+        HMLabel4->setGeometry(QRect(210, 110, 16, 71));
+        HMLabel4->setStyleSheet(QString::fromUtf8("background-color:brown;"));
+        HMLabel5 = new QLabel(gamewindow);
+        HMLabel5->setObjectName(QString::fromUtf8("HMLabel5"));
+        HMLabel5->setGeometry(QRect(180, 170, 80, 80));
         QFont font4;
         font4.setPointSize(65);
-        fourthHMLabel->setFont(font4);
-        fourthHMLabel->setAlignment(Qt::AlignCenter);
-        fifthHMLabel = new QLabel(gamewindow);
-        fifthHMLabel->setObjectName(QString::fromUtf8("fifthHMLabel"));
-        fifthHMLabel->setGeometry(QRect(210, 240, 16, 151));
-        fifthHMLabel->setStyleSheet(QString::fromUtf8("background-color: black;"));
-        sixthHMLabel = new QLabel(gamewindow);
-        sixthHMLabel->setObjectName(QString::fromUtf8("sixthHMLabel"));
-        sixthHMLabel->setGeometry(QRect(130, 270, 181, 16));
-        sixthHMLabel->setStyleSheet(QString::fromUtf8("background-color: black;"));
-        seventhHMLabel = new QLabel(gamewindow);
-        seventhHMLabel->setObjectName(QString::fromUtf8("seventhHMLabel"));
-        seventhHMLabel->setGeometry(QRect(150, 370, 141, 101));
+        HMLabel5->setFont(font4);
+        HMLabel5->setAlignment(Qt::AlignCenter);
+        HMLabel7 = new QLabel(gamewindow);
+        HMLabel7->setObjectName(QString::fromUtf8("HMLabel7"));
+        HMLabel7->setGeometry(QRect(210, 240, 16, 151));
+        HMLabel7->setStyleSheet(QString::fromUtf8("background-color: black;"));
+        HMLabel6 = new QLabel(gamewindow);
+        HMLabel6->setObjectName(QString::fromUtf8("HMLabel6"));
+        HMLabel6->setGeometry(QRect(130, 270, 181, 16));
+        HMLabel6->setStyleSheet(QString::fromUtf8("background-color: black;"));
+        HMLabel8 = new QLabel(gamewindow);
+        HMLabel8->setObjectName(QString::fromUtf8("HMLabel8"));
+        HMLabel8->setGeometry(QRect(150, 370, 141, 101));
         QFont font5;
         font5.setPointSize(75);
-        seventhHMLabel->setFont(font5);
-        seventhHMLabel->setAlignment(Qt::AlignCenter);
+        HMLabel8->setFont(font5);
+        HMLabel8->setAlignment(Qt::AlignCenter);
         puzzleWordLabel = new QLabel(gamewindow);
         puzzleWordLabel->setObjectName(QString::fromUtf8("puzzleWordLabel"));
-        puzzleWordLabel->setGeometry(QRect(410, 130, 301, 51));
+        puzzleWordLabel->setGeometry(QRect(360, 100, 350, 100));
         QFont font6;
         font6.setPointSize(35);
         font6.setUnderline(true);
         puzzleWordLabel->setFont(font6);
+        puzzleWordLabel->setAlignment(Qt::AlignCenter);
         ButtonA = new QPushButton(gamewindow);
         ButtonA->setObjectName(QString::fromUtf8("ButtonA"));
         ButtonA->setGeometry(QRect(370, 230, 42, 42));
@@ -840,7 +856,7 @@ public:
 
     void retranslateUi(QDialog *gamewindow)
     {
-        gamewindow->setWindowTitle(QCoreApplication::translate("gamewindow", "Dialog", nullptr));
+        gamewindow->setWindowTitle(QCoreApplication::translate("gamewindow", "The Hangman - Game", nullptr));
         timeLimitLabel->setText(QCoreApplication::translate("gamewindow", "time limitx", nullptr));
         hintButton->setText(QCoreApplication::translate("gamewindow", "Hint", nullptr));
         chancesLabel->setText(QCoreApplication::translate("gamewindow", "Chances:", nullptr));
@@ -848,14 +864,14 @@ public:
         scoreLabel->setText(QCoreApplication::translate("gamewindow", "SCORE:", nullptr));
         scoreValueLabel->setText(QCoreApplication::translate("gamewindow", "X", nullptr));
         backButton->setText(QCoreApplication::translate("gamewindow", "<- Give Up", nullptr));
-        baseHMLabel->setText(QString());
-        firstHMLabel->setText(QString());
-        secondHMLabel->setText(QString());
-        thirdHMLabel->setText(QString());
-        fourthHMLabel->setText(QCoreApplication::translate("gamewindow", "O", nullptr));
-        fifthHMLabel->setText(QString());
-        sixthHMLabel->setText(QString());
-        seventhHMLabel->setText(QCoreApplication::translate("gamewindow", "/\\", nullptr));
+        HMLabel1->setText(QString());
+        HMLabel2->setText(QString());
+        HMLabel3->setText(QString());
+        HMLabel4->setText(QString());
+        HMLabel5->setText(QCoreApplication::translate("gamewindow", "O", nullptr));
+        HMLabel7->setText(QString());
+        HMLabel6->setText(QString());
+        HMLabel8->setText(QCoreApplication::translate("gamewindow", "/\\", nullptr));
         puzzleWordLabel->setText(QCoreApplication::translate("gamewindow", "Puzzle Word", nullptr));
         ButtonA->setText(QCoreApplication::translate("gamewindow", "A", nullptr));
         ButtonB->setText(QCoreApplication::translate("gamewindow", "B", nullptr));
