@@ -37,36 +37,59 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(800, 600);
         MainWindow->setMaximumSize(QSize(800, 16777215));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: #F1D1B5;"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gameTitleTextEdit = new QTextEdit(centralwidget);
         gameTitleTextEdit->setObjectName(QString::fromUtf8("gameTitleTextEdit"));
-        gameTitleTextEdit->setGeometry(QRect(340, 90, 431, 91));
+        gameTitleTextEdit->setGeometry(QRect(390, 120, 311, 71));
         QFont font;
         font.setFamily(QString::fromUtf8("MS Reference Sans Serif"));
         gameTitleTextEdit->setFont(font);
+        gameTitleTextEdit->setFrameShape(QFrame::NoFrame);
         gameTitleTextEdit->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         gameTitleTextEdit->setReadOnly(true);
         playGameButton = new QPushButton(centralwidget);
         playGameButton->setObjectName(QString::fromUtf8("playGameButton"));
-        playGameButton->setGeometry(QRect(460, 250, 181, 51));
+        playGameButton->setGeometry(QRect(460, 250, 181, 52));
         QFont font1;
         font1.setFamily(QString::fromUtf8("MS Reference Sans Serif"));
         font1.setPointSize(16);
         playGameButton->setFont(font1);
         playGameButton->setAutoFillBackground(false);
+        playGameButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: #568EA6;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: #305F72;\n"
+"}"));
         addWordsButton = new QPushButton(centralwidget);
         addWordsButton->setObjectName(QString::fromUtf8("addWordsButton"));
-        addWordsButton->setGeometry(QRect(460, 330, 181, 51));
+        addWordsButton->setGeometry(QRect(460, 330, 181, 52));
         addWordsButton->setFont(font1);
+        addWordsButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: #568EA6;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: #305F72;\n"
+"}"));
         scroreBoardButton = new QPushButton(centralwidget);
         scroreBoardButton->setObjectName(QString::fromUtf8("scroreBoardButton"));
-        scroreBoardButton->setGeometry(QRect(460, 410, 181, 51));
+        scroreBoardButton->setGeometry(QRect(460, 410, 181, 52));
         scroreBoardButton->setFont(font1);
+        scroreBoardButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: #568EA6;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: #305F72;\n"
+"}"));
         gameLogoLabel = new QLabel(centralwidget);
         gameLogoLabel->setObjectName(QString::fromUtf8("gameLogoLabel"));
         gameLogoLabel->setGeometry(QRect(30, 90, 281, 431));
-        gameLogoLabel->setAutoFillBackground(true);
+        gameLogoLabel->setAutoFillBackground(false);
         gameLogoLabel->setPixmap(QPixmap(QString::fromUtf8("../../Abbildungen/mainMenuImage.png")));
         gameLogoLabel->setScaledContents(true);
         MainWindow->setCentralWidget(centralwidget);
@@ -92,7 +115,7 @@ public:
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:36pt;\">The Hangman</span></p></body></html>", nullptr));
         playGameButton->setText(QCoreApplication::translate("MainWindow", "Play Game", nullptr));
         addWordsButton->setText(QCoreApplication::translate("MainWindow", "Add Words", nullptr));
-        scroreBoardButton->setText(QCoreApplication::translate("MainWindow", "Score Board", nullptr));
+        scroreBoardButton->setText(QCoreApplication::translate("MainWindow", "Scoreboard", nullptr));
         gameLogoLabel->setText(QString());
     } // retranslateUi
 

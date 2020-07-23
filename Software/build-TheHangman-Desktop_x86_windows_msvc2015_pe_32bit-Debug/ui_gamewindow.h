@@ -69,6 +69,7 @@ public:
             gamewindow->setObjectName(QString::fromUtf8("gamewindow"));
         gamewindow->setEnabled(true);
         gamewindow->resize(800, 600);
+        gamewindow->setStyleSheet(QString::fromUtf8("background-color: #F1D1B5;"));
         timeLimitLabel = new QLabel(gamewindow);
         timeLimitLabel->setObjectName(QString::fromUtf8("timeLimitLabel"));
         timeLimitLabel->setGeometry(QRect(430, 30, 101, 21));
@@ -79,6 +80,13 @@ public:
         hintButton->setObjectName(QString::fromUtf8("hintButton"));
         hintButton->setGeometry(QRect(30, 20, 101, 41));
         hintButton->setFont(font);
+        hintButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: #568EA6;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: #305F72;\n"
+"}"));
         chancesLabel = new QLabel(gamewindow);
         chancesLabel->setObjectName(QString::fromUtf8("chancesLabel"));
         chancesLabel->setEnabled(true);
@@ -110,6 +118,13 @@ public:
         QFont font3;
         font3.setPointSize(14);
         backButton->setFont(font3);
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	background-color: #F18C8E;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: #F0B7A4;\n"
+"}"));
         HMLabel1 = new QLabel(gamewindow);
         HMLabel1->setObjectName(QString::fromUtf8("HMLabel1"));
         HMLabel1->setGeometry(QRect(30, 500, 121, 21));

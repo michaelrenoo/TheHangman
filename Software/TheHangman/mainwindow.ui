@@ -19,20 +19,26 @@
   <property name="windowTitle">
    <string>The Hangman</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #F1D1B5;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextEdit" name="gameTitleTextEdit">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>90</y>
-      <width>431</width>
-      <height>91</height>
+      <x>390</x>
+      <y>120</y>
+      <width>311</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>MS Reference Sans Serif</family>
      </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="sizeAdjustPolicy">
      <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -54,7 +60,7 @@ p, li { white-space: pre-wrap; }
       <x>460</x>
       <y>250</y>
       <width>181</width>
-      <height>51</height>
+      <height>52</height>
      </rect>
     </property>
     <property name="font">
@@ -66,6 +72,15 @@ p, li { white-space: pre-wrap; }
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #568EA6;
+}
+
+QPushButton:pressed {
+	background-color: #305F72;
+}</string>
+    </property>
     <property name="text">
      <string>Play Game</string>
     </property>
@@ -76,7 +91,7 @@ p, li { white-space: pre-wrap; }
       <x>460</x>
       <y>330</y>
       <width>181</width>
-      <height>51</height>
+      <height>52</height>
      </rect>
     </property>
     <property name="font">
@@ -84,6 +99,15 @@ p, li { white-space: pre-wrap; }
       <family>MS Reference Sans Serif</family>
       <pointsize>16</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #568EA6;
+}
+
+QPushButton:pressed {
+	background-color: #305F72;
+}</string>
     </property>
     <property name="text">
      <string>Add Words</string>
@@ -95,7 +119,7 @@ p, li { white-space: pre-wrap; }
       <x>460</x>
       <y>410</y>
       <width>181</width>
-      <height>51</height>
+      <height>52</height>
      </rect>
     </property>
     <property name="font">
@@ -104,8 +128,17 @@ p, li { white-space: pre-wrap; }
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #568EA6;
+}
+
+QPushButton:pressed {
+	background-color: #305F72;
+}</string>
+    </property>
     <property name="text">
-     <string>Score Board</string>
+     <string>Scoreboard</string>
     </property>
    </widget>
    <widget class="QLabel" name="gameLogoLabel">
@@ -118,7 +151,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="text">
      <string/>

@@ -16,6 +16,9 @@
   <property name="windowTitle">
    <string>The Hangman - Game</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #F1D1B5;</string>
+  </property>
   <widget class="QLabel" name="timeLimitLabel">
    <property name="geometry">
     <rect>
@@ -47,6 +50,15 @@
     <font>
      <pointsize>16</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: #568EA6;
+}
+
+QPushButton:pressed {
+	background-color: #305F72;
+}</string>
    </property>
    <property name="text">
     <string>Hint</string>
@@ -144,6 +156,15 @@
     <font>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: #F18C8E;
+}
+
+QPushButton:pressed {
+	background-color: #F0B7A4;
+}</string>
    </property>
    <property name="text">
     <string>&lt;- Give Up</string>
