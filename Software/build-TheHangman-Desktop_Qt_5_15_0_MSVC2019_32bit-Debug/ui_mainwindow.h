@@ -90,7 +90,7 @@ public:
         gameLogoLabel->setObjectName(QString::fromUtf8("gameLogoLabel"));
         gameLogoLabel->setGeometry(QRect(30, 90, 281, 431));
         gameLogoLabel->setAutoFillBackground(false);
-        gameLogoLabel->setPixmap(QPixmap(QString::fromUtf8("../../Abbildungen/mainMenuImage.png")));
+        gameLogoLabel->setPixmap(QPixmap(QString::fromUtf8("../build-TheHangman-Desktop_Qt_5_15_0_MSVC2019_32bit-Release/release/mainMenuImage.png")));
         gameLogoLabel->setScaledContents(true);
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
