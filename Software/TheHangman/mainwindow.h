@@ -28,6 +28,6 @@ private:
     Ui::MainWindow *ui;
     addwords *addwordsWindow;
     gamewindow *game;
-    scoreboard *scoreboard;
+    scoreboard *scoreboardWindow;
 };
 #endif // MAINWINDOW_H

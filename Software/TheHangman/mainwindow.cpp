@@ -31,5 +31,6 @@ void MainWindow::on_playGameButton_clicked()
 
 void MainWindow::on_scoreboardButton_clicked()
 {
-    scoreboard->show();
+    scoreboardWindow = new scoreboard();
+    scoreboardWindow->show();
 }
