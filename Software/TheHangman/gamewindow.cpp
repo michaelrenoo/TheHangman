@@ -108,6 +108,9 @@ void gamewindow::letter_pressed()
 
 void gamewindow::on_hintButton_clicked()
 {
+    data.tempScore -= 20;
+    consecutive = 0;  // Reset consecutive everytime hint is called
+    ui->scoreValueLabel->setNum(data.tempScore);
     QMessageBox::information(this, "Hint", data.tempHint);
 }
 
@@ -202,6 +205,7 @@ void gamewindow::game_start()
     guessedWord = change_game_word(toBeGuessed);
     consecutive = 0;
     data.tempScore = 0;
+    score = 0;
 
     // Connect specific widgets to the functions
     QPushButton *letterButtons[26];  // Array to ref all pushButtons (from A to Z)
