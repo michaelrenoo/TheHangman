@@ -4,21 +4,7 @@
 
 database::database()
 {
-    // TODO: Declare high scores
-
-
-    // TODO: Declare achieved score in game
-
-
-    // TODO: Declare database for words that can be played
-
-
-    // TODO: Declare any other objects related to the database
-
-
-    // TODO: Initialise all objects and its connections to each other
-
-
+    // All declarations in the header file
 }
 
 
@@ -120,16 +106,20 @@ vector<int> database::getHighScore()
 /// \param score
 /// The score attained by the user
 ///
-void database::setHighScore(int score)
+void database::setHighScore(int scoreInput)
 {
     int index;
     for(uint i = 0; i < highScoreDatabase.size(); i++)
     {
-        if(score > highScoreDatabase[i])
+        if(scoreInput > highScoreDatabase[i])
         {
             index = i;
-            //highScoreDatabase.insert(index, score);
+            highScoreDatabase.insert(highScoreDatabase.begin() + index, scoreInput);
+            qDebug() << index;
             break;
+        } else
+        {
+            highScoreDatabase.push_back(scoreInput);
         }
     }
 }

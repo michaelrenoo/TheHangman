@@ -2,6 +2,7 @@
 #define SCOREBOARD_H
 
 #include <QDialog>
+#include <database.h>
 
 namespace Ui {
 class scoreboard;
@@ -20,6 +21,12 @@ private slots:  // Called when signal is given
 
 private:
     Ui::scoreboard *ui;
+    database data;
+    QString scoreData;
+    int firstScore;
+    int secondScore;
+    int thirdScore;
+    vector<int> scores;
 };
 
 #endif // SCOREBOARD_H

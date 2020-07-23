@@ -195,7 +195,6 @@ QString gamewindow::change_game_word(QString text)
 int gamewindow::check_word(char input, QString toGuess)
 {  // Inspiration: http://www.cppforschool.com/project/hangman-game-code.html
     int match = 0;
-    //int max_limit = max_guesses;
     for (int i = 0; i < toGuess.length(); i++) {
         // Check with the guessed word whether the letter is already matched
         if (input == guessedWord[i])
@@ -236,11 +235,13 @@ void gamewindow::is_finished(QString guessed) {  // Inspiration: https://stackov
         if (box == QMessageBox::Yes) {
             qDebug() << "New game";
             // Save scores
+            data.setHighScore(score);
             // Load new game
             new_game();
         } else {
             qDebug() << "No more game";
             // Save scores
+            data.setHighScore(score);
             // Close game window
             QWidget::close();
         }
@@ -308,11 +309,13 @@ void gamewindow::game_over(int guesses)
         if (box == QMessageBox::Retry) {
             qDebug() << "New game";
             // Save scores
+            data.setHighScore(score);
             // Load new game
             new_game();
         } else {
             qDebug() << "No more game";
             // Save scores
+            data.setHighScore(score);
             // Close game window
             QWidget::close();  // Close the UI
         }
@@ -334,8 +337,8 @@ void gamewindow::new_game()
     // Restart game
     // Check whether there are still words left to be played
     if (data.previousWords.size() != data.databaseSize) {
-        qDebug() << data.databaseSize;
-        qDebug() << data.previousWords.size();
+        qDebug() << "databaseSize" << data.databaseSize;
+        qDebug() << "previous words vector size" << data.previousWords.size();
         for (uint i = 0; i < data.previousWords.size(); i++) {
             if (data.tempWord.toStdString() == data.previousWords[i]) {  // Check whether the word has already been played
                 this->getData();
@@ -345,7 +348,6 @@ void gamewindow::new_game()
         gamewindow *game = new gamewindow();
         game->show();
         qDebug() << "score buffer" << scoreBuffer;
-        qDebug() << data.previousWords.size();
         data.tempScore = scoreBuffer;
     }
     else
@@ -354,6 +356,7 @@ void gamewindow::new_game()
                                  "Congratulations! You have guessed all the words in the database.\n"
                                  "You can add more words through the \"Add Words\" menu on the main page.");
         // Save scores
+        data.setHighScore(score);
         // Close UI
         QWidget::close();
     }
