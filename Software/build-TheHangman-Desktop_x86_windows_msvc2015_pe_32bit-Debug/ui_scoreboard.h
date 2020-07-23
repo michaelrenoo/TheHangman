@@ -24,7 +24,6 @@ public:
     QDialogButtonBox *buttonBox;
     QLabel *scoreboardLabel;
     QPlainTextEdit *scoreText;
-    QPlainTextEdit *playerText;
 
     void setupUi(QDialog *scoreboard)
     {
@@ -37,7 +36,7 @@ public:
         buttonBox->setGeometry(QRect(400, 490, 341, 32));
         buttonBox->setStyleSheet(QString::fromUtf8("background-color: rgb(86, 142, 166);"));
         buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        buttonBox->setStandardButtons(QDialogButtonBox::Close);
         scoreboardLabel = new QLabel(scoreboard);
         scoreboardLabel->setObjectName(QString::fromUtf8("scoreboardLabel"));
         scoreboardLabel->setGeometry(QRect(280, 40, 231, 41));
@@ -48,16 +47,12 @@ public:
         scoreboardLabel->setAlignment(Qt::AlignCenter);
         scoreText = new QPlainTextEdit(scoreboard);
         scoreText->setObjectName(QString::fromUtf8("scoreText"));
-        scoreText->setGeometry(QRect(400, 110, 301, 351));
+        scoreText->setGeometry(QRect(250, 100, 301, 381));
         QFont font1;
         font1.setPointSize(40);
         scoreText->setFont(font1);
         scoreText->setStyleSheet(QString::fromUtf8("background-color: #F0FFFF;"));
-        playerText = new QPlainTextEdit(scoreboard);
-        playerText->setObjectName(QString::fromUtf8("playerText"));
-        playerText->setGeometry(QRect(90, 110, 281, 351));
-        playerText->setFont(font1);
-        playerText->setStyleSheet(QString::fromUtf8("background-color: #F0FFFF;"));
+        scoreText->setReadOnly(true);
 
         retranslateUi(scoreboard);
         QObject::connect(buttonBox, SIGNAL(accepted()), scoreboard, SLOT(accept()));
@@ -70,12 +65,10 @@ public:
     {
         scoreboard->setWindowTitle(QCoreApplication::translate("scoreboard", "The Hangman - Scoreboard", nullptr));
         scoreboardLabel->setText(QCoreApplication::translate("scoreboard", "SCOREBOARD", nullptr));
-        scoreText->setPlainText(QCoreApplication::translate("scoreboard", "230\n"
-"175\n"
-"110", nullptr));
-        playerText->setPlainText(QCoreApplication::translate("scoreboard", "MKZZ\n"
-"VBH\n"
-"ADBB", nullptr));
+        scoreText->setPlainText(QCoreApplication::translate("scoreboard", "	230\n"
+"	175\n"
+"	110\n"
+"	75", nullptr));
     } // retranslateUi
 
 };

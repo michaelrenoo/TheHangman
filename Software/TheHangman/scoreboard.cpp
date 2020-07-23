@@ -6,9 +6,15 @@ scoreboard::scoreboard(QWidget *parent) :
     ui(new Ui::scoreboard)
 {
     ui->setupUi(this);
+    connect(ui->buttonBox, SIGNAL(released()), this, SLOT(on_buttonBox_clicked()));
 }
 
 scoreboard::~scoreboard()
 {
     delete ui;
+}
+
+void scoreboard::on_buttonBox_clicked()
+{
+    this->close();
 }

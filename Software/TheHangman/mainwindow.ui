@@ -113,7 +113,7 @@ QPushButton:pressed {
      <string>Add Words</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="scroreboardButton">
+   <widget class="QPushButton" name="scoreboardButton">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -170,7 +170,7 @@ QPushButton:pressed {
   <tabstop>gameTitleTextEdit</tabstop>
   <tabstop>playGameButton</tabstop>
   <tabstop>addWordsButton</tabstop>
-  <tabstop>scroreboardButton</tabstop>
+  <tabstop>scoreboardButton</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -15,6 +15,9 @@ public:
     explicit scoreboard(QWidget *parent = nullptr);
     ~scoreboard();
 
+private slots:
+    void on_buttonBox_clicked();
+
 private:
     Ui::scoreboard *ui;
 };
